@@ -22,6 +22,26 @@ recipes = [{
         'cook_time': '30 mins',
         'preperation_time': '5 mins',
         'date_posted': 'December 02, 2019'
+    },
+    {
+        'title': 'Salad',
+        'description': 'Sausage Pasta',
+        'ingredients': 'Sausage, pasta, white sauce',
+        'instructions': 'Cook carefully',
+        'categories': 'Meat, Pasta',
+        'cook_time': '30 mins',
+        'preperation_time': '5 mins',
+        'date_posted': 'December 02, 2019'
+    },
+    {
+        'title': 'Salad',
+        'description': 'Sausage Pasta',
+        'ingredients': 'Sausage, pasta, white sauce',
+        'instructions': 'Cook carefully',
+        'categories': 'Meat, Pasta',
+        'cook_time': '30 mins',
+        'preperation_time': '5 mins',
+        'date_posted': 'December 02, 2019'
     }
 ]
 
