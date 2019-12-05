@@ -2,11 +2,11 @@
 <div class="container">
     <div class="row">
         {% for recipe in recipes %}
-        <div class="col-lg-4">
+        <div class="col-sm-12 col-md-6 col-lg-4">
             <div class="card mt-5">
-                <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">{{ recipe.description}} </h5>
+                <img src="https://images.unsplash.com/photo-1507120366498-4656eaece7fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80" class="card-img-top" alt="...">
+                <div class="card-body" id="recipe-card">
+                    <h5 class="card-title">{{ recipe.description }} </h5>
                 </div>
             </div>
         </div>

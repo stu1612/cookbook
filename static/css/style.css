@@ -35,6 +35,10 @@ body {
 
 /*recipes.html*/
 
+#recipe-card {
+    height: 150px;
+}
+
 /*add_recipes.html*/
 
 /*MEDIA QUERIES*/
