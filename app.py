@@ -4,17 +4,15 @@ from flask import Flask, render_template, url_for
 app = Flask(__name__)
 
 recipes = [{
-        'title': 'Lasagna',
-        'description': 'Italien favourite',
+        'description': 'Italien Lasagna with chorizo, feta cheese and spinach',
         'ingredients': 'Mince, Onion, Pasta sheets',
         'instructions': 'Cook carefully',
-        'categories': 'Meat, Italien, Pasta',
+        'categories': 'Meat, Italien, Lasagna, Pasta',
         'cook_time': '1.5 hrs',
         'preperation_time': '30 mins',
         'date_posted': 'December 03, 2019'
     },
     {
-        'title': 'Salad',
         'description': 'Sausage Pasta',
         'ingredients': 'Sausage, pasta, white sauce',
         'instructions': 'Cook carefully',
@@ -24,7 +22,6 @@ recipes = [{
         'date_posted': 'December 02, 2019'
     },
     {
-        'title': 'Salad',
         'description': 'Sausage Pasta',
         'ingredients': 'Sausage, pasta, white sauce',
         'instructions': 'Cook carefully',
