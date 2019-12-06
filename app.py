@@ -4,7 +4,7 @@ from flask import Flask, render_template, url_for
 app = Flask(__name__)
 
 recipes = [{
-        'description': 'Italien Lasagna with chorizo, feta cheese and spinach',
+        'title': 'Italien Lasagna with chorizo, feta cheese and spinach',
         'ingredients': 'Mince, Onion, Pasta sheets',
         'instructions': 'Cook carefully',
         'categories': 'Meat, Italien, Lasagna, Pasta',
@@ -13,7 +13,7 @@ recipes = [{
         'date_posted': 'December 03, 2019'
     },
     {
-        'description': 'Sausage Pasta',
+        'title': 'Sausage Pasta',
         'ingredients': 'Sausage, pasta, white sauce',
         'instructions': 'Cook carefully',
         'categories': 'Meat, Pasta',
@@ -22,7 +22,7 @@ recipes = [{
         'date_posted': 'December 02, 2019'
     },
     {
-        'description': 'Sausage Pasta',
+        'title': 'Sausage Pasta',
         'ingredients': 'Sausage, pasta, white sauce',
         'instructions': 'Cook carefully',
         'categories': 'Meat, Pasta',
@@ -32,7 +32,6 @@ recipes = [{
     },
     {
         'title': 'Salad',
-        'description': 'Sausage Pasta',
         'ingredients': 'Sausage, pasta, white sauce',
         'instructions': 'Cook carefully',
         'categories': 'Meat, Pasta',
