@@ -1,7 +1,11 @@
 import os
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request
+from flask_pymongo import PyMongo
 
 app = Flask(__name__)
+# app.config["MONGO_DBNAME"] = 'recipe_collection'
+# app.config["MONGO_URI"] = os.environ.get('MONGO_URI')
+
 
 recipes = [{
         'title': 'Italien Lasagna with chorizo, feta cheese and spinach',
@@ -55,6 +59,11 @@ def recipes_page():
 @app.route('/add_recipe')
 def add_recipe():
     return render_template('add_recipe.html', title='Create Recipe')
+    
+    
+@app.route('/post_recipe')
+def post_recipe():
+    return render_template('add_recipe.html', title='Create Recipe')    
 
 
 if __name__ == '__main__':
