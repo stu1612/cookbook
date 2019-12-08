@@ -1,10 +1,11 @@
 import os
-from flask import Flask, render_template, url_for, request
+from flask import Flask, render_template, url_for, request, flash, redirect
 from flask_pymongo import PyMongo
 
 app = Flask(__name__)
 # app.config["MONGO_DBNAME"] = 'recipe_collection'
 # app.config["MONGO_URI"] = os.environ.get('MONGO_URI')
+app.secret_key = "key"
 
 
 recipes = [{
@@ -56,8 +57,11 @@ def recipes_page():
     return render_template('recipes.html', recipes=recipes, title='Recipes')
     
     
-@app.route('/add_recipe')
+@app.route('/add_recipe', methods=['GET', 'POST'])
 def add_recipe():
+    if request.method == 'POST':
+        flash('Great - your recipe has been added to our collection !', 'success')
+        return redirect(url_for('recipes_page'))
     return render_template('add_recipe.html', title='Create Recipe')
     
     
