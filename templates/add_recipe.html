@@ -2,7 +2,7 @@
 <div class="container bg-white mt-5">
     <h1 class="display-4 pt-3">Add Recipe</h1>
     <hr>
-    <form method="POST" action="" class="needs-validation" novalidate>
+    <form method="POST" action="{{ url_for('post_recipe') }}" class="needs-validation" novalidate>
         <div class="form-row">
             <div class="col-lg-12 mb-3 mt-3">
                 <label for="title">Title Description</label>
@@ -16,8 +16,8 @@
         <div class="form-row">
             <div class="col-lg-4 mb-3">
                 <div class="form-group">
-                    <label for="tag1">Category Tag</label>
-                    <select class="form-control" name="tag1" id="tag1" required>
+                    <label for="tag_1">Category Tag</label>
+                    <select class="form-control" name="tag_1" id="tag_1" required>
                           <option value="" selected disabled>Please select</option>
                           <option>Meat</option>
                           <option>Fish</option>
@@ -27,8 +27,8 @@
             </div>
             <div class="col-lg-4 mb-3">
                 <div class="form-group">
-                    <label for="tag1">Category Tag</label>
-                    <select class="form-control" name="tag2" id="tag2" required>
+                    <label for="tag_2">Category Tag</label>
+                    <select class="form-control" name="tag_2" id="tag_2" required>
                           <option value="" selected disabled>Please select</option>
                           <option>Meat</option>
                           <option>Fish</option>
@@ -38,8 +38,8 @@
             </div>
             <div class="col-lg-4 mb-3">
                 <div class="form-group">
-                    <label for="tag1">Category Tag</label>
-                    <select class="form-control" name="tag3" id="tag3" required>
+                    <label for="tag_3">Category Tag</label>
+                    <select class="form-control" name="tag_3" id="tag_3" required>
                           <option value="" selected disabled>Please select</option>
                           <option>Meat</option>
                           <option>Fish</option>
@@ -88,18 +88,18 @@
         </div>
         <div class="form-row">
             <div class="col-lg-6 mb-3">
-                <label for="ing1">Ingredient #1</label>
-                <input type="text" class="form-control" id="ing1" name="ing1" aria-describedby="inputGroupPrepend">
+                <label for="ing_1">Ingredient #1</label>
+                <input type="text" class="form-control" id="ing_1" name="ing_1" aria-describedby="inputGroupPrepend">
             </div>
             <div class="col-lg-6 mb-3">
-                <label for="qty1">Qty Amount</label>
-                <input type="text" class="form-control" id="qty1" name="qty1" aria-describedby="inputGroupPrepend">
+                <label for="qty_1">Qty Amount</label>
+                <input type="text" class="form-control" id="qty_1" name="qty_1" aria-describedby="inputGroupPrepend">
             </div>
         </div>
         <div class="form-row">
             <div class="col-lg-12 mb-3">
-                <label for="method1">Method #1</label>
-                <input type="text" class="form-control" id="method1" name="method1" aria-describedby="inputGroupPrepend">
+                <label for="method_1">Method #1</label>
+                <input type="text" class="form-control" id="method_1" name="method_1" aria-describedby="inputGroupPrepend">
             </div>
         </div>
         <button class="btn btn-outline-info mb-5" type="submit">Submit form</button>
