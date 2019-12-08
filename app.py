@@ -88,9 +88,9 @@ def post_recipe():
 
 
 # the_recipe route is the route to see the selected card recipe in a full html page including all contents
-@app.route('/the_recipe')
+@app.route('/the_recipe/<recipe_id>')
 def the_recipe(recipe_id):
-    the_recipe = mongo.db.recipes.find.one({"_id": ObjectId(recipe_id)})
+    the_recipe = mongo.db.recipes.find({"_id": ObjectId(recipe_id)})
     return render_template('the_recipe.html', title='Selected Recipe', recipes=the_recipe)
 
 

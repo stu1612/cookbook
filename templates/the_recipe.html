@@ -1,25 +1,25 @@
 {% extends "base.html" %} {% block content %} {% for recipe in recipes %}
-<div class="container">
+<div class="container-fluid text-center">
     <div class="row">
-
-        <div class="col-12">
+        <div class="col-lg-12">
             {% if recipe.image %}
-            <img src="{{recipe.image}}" class="img-responsive" alt="displayed url image from user"> {% else %}
-            <img src="https://images.unsplash.com/photo-1542010589005-d1eacc3918f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1969&q=80" class="img-responsive" alt="image of a cook book"> {% endif %}
-            {{ recipe.title }}
-            {{ recipe.tag_1 }}
-            {{ recipe.tag_2 }}
-            {{ recipe.tag_3 }}
-            {{ recipe.prep_time }}
-            {{ recipe.cook_time }}
-            {{ recipe.serving }}
-            {{ recipe.ing_1 }}
-            {{ recipe.qty_1 }}
-            {{ recipe.method_1 }}
+                <img src="{{recipe.image}}" class="img-responsive the-card-img" alt="displayed url image from user"> 
+            {% else %}
+                <img src="https://images.unsplash.com/photo-1542010589005-d1eacc3918f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1969&q=80" class="img-responsive the-card-img" alt="image of a cook book"> {% endif %}
+            <!--{{ recipe.title }}-->
+            <!--{{ recipe.tag_1 }}-->
+            <!--{{ recipe.tag_2 }}-->
+            <!--{{ recipe.tag_3 }}-->
+            <!--{{ recipe.prep_time }}-->
+            <!--{{ recipe.cook_time }}-->
+            <!--{{ recipe.serving }}-->
+            <!--{{ recipe.ing_1 }}-->
+            <!--{{ recipe.qty_1 }}-->
+            <!--{{ recipe.method_1 }}-->
             
         </div>
+        
     </div>
 </div>
-
 
 {% endfor %} {% endblock content %}
