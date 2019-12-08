@@ -12,6 +12,10 @@ body {
     text-shadow: 2px 2px black;
 }
 
+img {
+    height: 40vh;
+}
+
 
 /*home.html*/
 
@@ -52,6 +56,9 @@ body {
         margin: auto;
         font-size: 1.5rem;
     }
+    img {
+        height: 20vh;
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -74,10 +81,17 @@ body {
         width: 90%;
         font-size: 1.2rem;
     }
+    img {
+        height: 42vh;
+    }
 }
+
 
 @media only screen and (max-width: 375px) {
     .display-4 {
         font-size: 2.5rem;
+    }
+    img {
+        height: 45vh;
     }
 }

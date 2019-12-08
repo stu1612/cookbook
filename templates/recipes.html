@@ -4,7 +4,11 @@
         {% for recipe in recipes %}
         <div class="col-sm-12 col-md-6 col-lg-4">
             <div class="card mt-5">
-                <img src="https://images.unsplash.com/photo-1507120366498-4656eaece7fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80" class="card-img-top" alt="...">
+                {% if recipe.image %}
+                    <img src="{{recipe.image}}" class="img-responsive" alt="displayed url image from user">
+                {% else %}
+                    <img src="https://images.unsplash.com/photo-1542010589005-d1eacc3918f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1969&q=80" class="img-responsive" alt="image of a cook book">
+                {% endif %}
                 <div class="card-body" id="recipe-card">
                     <h5 class="card-title">{{ recipe.title }} </h5>
                 </div>
