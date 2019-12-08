@@ -19,7 +19,7 @@ body {
 
 .the-card-img {
     height: 80vh;
-    max-width: 100%;
+    width: 80vw;
 }
 
 
@@ -74,7 +74,7 @@ body {
     #banner-text {
         width: 100%;
     }
-     .card-img {
+    .card-img {
         height: 22vh;
     }
 }

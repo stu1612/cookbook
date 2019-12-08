@@ -10,9 +10,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <!--font awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" integrity="sha384-wxqG4glGB3nlqX0bi23nmgwCSjWIW13BdLUEYC4VIMehfbcro/ATkyDsF/AbIOVe" crossorigin="anonymous">
     <title>Cook Book - {% block title %}{{title}}{% endblock title%}</title>
-    <link rel="icon" type="image/ico" href="{{ url_for('static', filename='img/cookbook_img.jpg') }}">
-    {% endblock head %}
+    <link rel="icon" type="image/ico" href="{{ url_for('static', filename='img/cookbook_img.jpg') }}"> {% endblock head %}
 </head>
 
 <body>
@@ -38,18 +39,13 @@
                 </li>
             </ul>
         </div>
-        </nav>
-        
-    {% with messages = get_flashed_messages(with_categories = true) %} 
-        {% if messages %} 
-            {% for category, message in messages %}
-                <div class="container text-center mt-2 alert alert-{{ category }}">
-                    {{ message }}
-                </div>
-            {% endfor %} 
-        {% endif %} 
-    {% endwith %}
-    {% block content %}{% endblock content%}
+    </nav>
+
+    {% with messages = get_flashed_messages(with_categories = true) %} {% if messages %} {% for category, message in messages %}
+    <div class="container text-center mt-2 alert alert-{{ category }}">
+        {{ message }}
+    </div>
+    {% endfor %} {% endif %} {% endwith %} {% block content %}{% endblock content%}
 
 
 

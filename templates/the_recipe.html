@@ -1,25 +1,40 @@
 {% extends "base.html" %} {% block content %} {% for recipe in recipes %}
-<div class="container text-center mt-2">
+<div class="container-fluid text-center mt-2">
     <div class="row">
         <div class="col-12">
             {% if recipe.image %}
-                <img src="{{recipe.image}}" class="img-responsive the-card-img" alt="displayed url image from user"> 
+            <img src="{{recipe.image}}" class="img-fluid the-card-img" alt="displayed url image from user"> 
             {% else %}
-                <img src="https://images.unsplash.com/photo-1542010589005-d1eacc3918f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1969&q=80" class="img-responsive the-card-img" alt="image of a cook book"> {% endif %}
-            <!--{{ recipe.title }}-->
-            <!--{{ recipe.tag_1 }}-->
-            <!--{{ recipe.tag_2 }}-->
-            <!--{{ recipe.tag_3 }}-->
-            <!--{{ recipe.prep_time }}-->
-            <!--{{ recipe.cook_time }}-->
-            <!--{{ recipe.serving }}-->
-            <!--{{ recipe.ing_1 }}-->
-            <!--{{ recipe.qty_1 }}-->
-            <!--{{ recipe.method_1 }}-->
-            
+            <img src="https://images.unsplash.com/photo-1542010589005-d1eacc3918f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1969&q=80" class="img-responsive the-card-img" alt="image of a cook book"> {% endif %}
         </div>
-        
     </div>
 </div>
+<div class="container text-center bg-white mt-5 mb-5">
+    <h2 class="display-4 pt-4">{{ recipe.title.capitalize() }}</h2>
+    <p class="ml-5 mr-5 mt-3">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis </p>
+    <div class="row justify-content-center m-5">
+        <div class="col-2">
+            <i class="far fa-clock fa-3x"></i>
+            <p class="lead mt-1">{{recipe.cook_time}} hrs</p>
+        </div>
+        <div class="col-2">
+            <i class="fas fa-utensils fa-3x"></i>
+            <p class="lead mt-1">{{recipe.serving}} ppl</p>
+        </div>
+    </div>
+</div>
+<div class="container text-center bg-white mt-5 mb-5">
+    <div class="row justify-content-center m-5">
+        <div class="col-4">
+            <h4>Ingredients</h4>
+            <p class="lead mt-1">{{recipe.qty_1}} - {{recipe.ing_1}}</p>
+        </div>
+        <div class="col-6">
+            <h4>Method</h4>
+            <p class="lead mt-1">{{recipe.method_1}}</p>
+        </div>
+    </div>
+</div>
+
 
 {% endfor %} {% endblock content %}
