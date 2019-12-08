@@ -87,6 +87,13 @@ def post_recipe():
     return render_template('add_recipe.html', title='Create Recipe')    
 
 
+# the_recipe route is the route to see the selected card recipe in a full html page including all contents
+@app.route('/the_recipe')
+def the_recipe(recipe_id):
+    the_recipe = mongo.db.recipes.find.one({"_id": ObjectId(recipe_id)})
+    return render_template('the_recipe.html', title='Selected Recipe', recipes=the_recipe)
+
+
 if __name__ == '__main__':
     app.run(host = os.environ.get('IP'),
         port = int(os.environ.get('PORT')),
