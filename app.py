@@ -37,16 +37,58 @@ def post_recipe():
         recipes = mongo.db.recipes
         recipes.insert({
             'title': request.form.get('title'),
-            'tag_1': request.form.get('tag_1'),
-            'tag_2': request.form.get('tag_2'),
-            'tag_3': request.form.get('tag_3'),
+            'tags':
+                [
+                    {'tag': request.form.get('tag_1')},
+                    {'tag': request.form.get('tag_2')},
+                    {'tag': request.form.get('tag_3')},
+                ],
             'prep_time': request.form.get('prep_time'),
             'cook_time': request.form.get('cook_time'),
             'serving': request.form.get('serving'),
             'image': request.form.get('image'),
-            'ing_1': request.form.get('ing_1'),
-            'qty_1': request.form.get('qty_1'),
-            'method_1': request.form.get('method_1'),
+            'ingredients':
+                [
+                    {
+                        'ing': request.form.get('ing_1'),
+                        'qty': request.form.get('qty_1')
+                    },
+                    {
+                        'ing': request.form.get('ing_2'),
+                        'qty': request.form.get('qty_2')
+                    },
+                    {
+                        'ing': request.form.get('ing_3'),
+                        'qty': request.form.get('qty_3')
+                    },
+                    {
+                        'ing': request.form.get('ing_4'),
+                        'qty': request.form.get('qty_4')
+                    },
+                    {
+                        'ing': request.form.get('ing_5'),
+                        'qty': request.form.get('qty_5')
+                    }
+                   
+                ],    
+            'methods': 
+                [
+                    {    
+                        'method': request.form.get('method_1'),
+                    },
+                    {    
+                        'method': request.form.get('method_2'),
+                    },
+                    {    
+                        'method': request.form.get('method_3'),
+                    },
+                    {    
+                        'method': request.form.get('method_4'),
+                    },
+                    {    
+                        'method': request.form.get('method_5')
+                    }
+                ]
             })
         flash('Great - your recipe has been added to our collection !',
               'success')

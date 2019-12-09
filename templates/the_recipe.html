@@ -24,14 +24,24 @@
     </div>
 </div>
 <div class="container text-center bg-white mt-5 mb-5">
-    <div class="row justify-content-center m-5">
+    <div class="row justify-content-center pt-5">
         <div class="col-4">
             <h4>Ingredients</h4>
-            <p class="lead mt-1">{{recipe.qty_1}} - {{recipe.ing_1}}</p>
+            {% for ingredient in recipe.ingredients %}
+            {% if ingredients %}
+            <p class="lead mt-1">{{ingredient.qty}} - {{ingredient.ing}}</p>
+            {% else %}
+            <p class="lead mt-1">{{ingredient.qty}}  {{ingredient.ing}}</p>
+            {% endif %}
+            {% endfor %}
         </div>
         <div class="col-6">
             <h4>Method</h4>
-            <p class="lead mt-1">{{recipe.method_1}}</p>
+            {% for method in recipe.methods %}
+            {% if method %}
+            <p class="lead mt-1">{{method.method}}</p>
+            {% endif %}
+            {% endfor %}
         </div>
     </div>
 </div>
