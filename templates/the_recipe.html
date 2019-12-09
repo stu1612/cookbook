@@ -3,8 +3,7 @@
     <div class="row">
         <div class="col-12">
             {% if recipe.image %}
-            <img src="{{recipe.image}}" class="img-fluid the-card-img" alt="displayed url image from user"> 
-            {% else %}
+            <img src="{{recipe.image}}" class="img-fluid the-card-img" alt="displayed url image from user"> {% else %}
             <img src="https://images.unsplash.com/photo-1542010589005-d1eacc3918f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1969&q=80" class="img-responsive the-card-img" alt="image of a cook book"> {% endif %}
         </div>
     </div>
@@ -27,21 +26,17 @@
     <div class="row justify-content-center pt-5">
         <div class="col-4">
             <h4>Ingredients</h4>
-            {% for ingredient in recipe.ingredients %}
-            {% if ingredients %}
+            {% for ingredient in recipe.ingredients %} {% if ingredients %}
             <p class="lead mt-1">{{ingredient.qty}} - {{ingredient.ing}}</p>
             {% else %}
-            <p class="lead mt-1">{{ingredient.qty}}  {{ingredient.ing}}</p>
-            {% endif %}
-            {% endfor %}
+            <p class="lead mt-1">{{ingredient.qty}} {{ingredient.ing}}</p>
+            {% endif %} {% endfor %}
         </div>
         <div class="col-6">
             <h4>Method</h4>
-            {% for method in recipe.methods %}
-            {% if method %}
+            {% for method in recipe.methods %} {% if method %}
             <p class="lead mt-1">{{method.method}}</p>
-            {% endif %}
-            {% endfor %}
+            {% endif %} {% endfor %}
         </div>
     </div>
 </div>
