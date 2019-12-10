@@ -27,6 +27,13 @@ body {
     width: 100%;
 }
 
+.tags-mobile-view {
+    display: none;
+}
+
+.btn-mobile {
+    display: none;
+}
 
 /*home.html*/
 
@@ -71,7 +78,7 @@ body {
         height: 20vh;
     }
     .the-card-img {
-        height: 50vh;
+        height: auto;
     }
 }
 
@@ -81,6 +88,27 @@ body {
     }
     .card-img {
         height: 22vh;
+    }
+    .recipe-text {
+        font-size: 1rem;
+    }
+    .btn-desktop {
+        display: none;
+    }
+    .btn-mobile {
+        display: block;
+    }
+    .recipe-col {
+        padding-bottom: 15px;
+    }
+    li {
+        display: none;
+    }
+    .tags-mobile-view {
+        display: inline-block;
+    }
+    .recipe-icon-row {
+        margin-top: 1rem!important;
     }
 }
 
@@ -93,6 +121,7 @@ body {
     }
     .display-4 {
         font-size: 3rem;
+        padding: 0 20px;
     }
     .lead {
         width: 90%;
@@ -104,6 +133,9 @@ body {
     .the-card-img {
         height: 40vh;
         width: 100%;
+    }
+    .recipe-text {
+        text-align: left;
     }
 }
 

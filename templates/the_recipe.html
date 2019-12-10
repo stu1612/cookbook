@@ -1,27 +1,33 @@
 {% extends "base.html" %} {% block content %} {% for recipe in recipes %}
 <div class="container-fluid bg-white text-center">
     <div class="row">
-        <div class="col-lg-5">
+        <div class="col-lg-6">
             {% if recipe.image %}
             <img src="{{recipe.image}}" class="img-responsive the-card-img" alt="displayed url image from user"> {% else %}
             <img src="https://images.unsplash.com/photo-1542010589005-d1eacc3918f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1969&q=80" class="img-responsive the-card-img" alt="image of a cook book"> {% endif %}
         </div>
-        <div class="col-lg-7">
+        <div class="col-lg-6">
             <h2 class="display-4 mt-5">{{ recipe.title.capitalize() }}</h2>
             <p class="ml-5 mr-5 mt-5">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis </p>
-            <div class="row justify-content-center mt-5">
-                <div class="col-3">
+            
+            <!-- Mobile styling - add tags list closer to title -->
+            {% for tag in recipe.tags %} {% if tag %}
+                <p class="text-center mr-2 tags-mobile-view">{{tag.tag.upper()}}</p>
+            {% endif %} {% endfor %}
+            
+            <div class="row justify-content-center mt-5 recipe-icon-row">
+                <div class="col-sm-12 col-lg-4 recipe-col">
                     <i class="far fa-clock fa-3x"></i>
                     <p class="lead mt-1">{{recipe.cook_time}} hrs</p>
                 </div>
-                <div class="col-3">
+                <div class="col-sm-12 col-lg-4 recipe-col">
                     <i class="fas fa-utensils fa-3x"></i>
                     <p class="lead mt-1">{{recipe.serving}} ppl</p>
                 </div>
-                <div class="col-3">
+                <div class="col-sm-12 col-lg-4 recipe-col">
                     <ul>
                         {% for tag in recipe.tags %} {% if tag %}
-                        <li class="lead mt-1 text-left">{{tag.tag}}</li>
+                        <li class="text-left">{{tag.tag}}</li>
                         {% endif %} {% endfor %}
                     </ul>
                 </div>
@@ -31,25 +37,27 @@
 </div>
 <div class="container text-center bg-white mt-5 pb-5">
     <div class="row justify-content-center pt-5">
-        <div class="col-4">
+        <div class="col-sm-12 col-lg-4">
             <h4>Ingredients</h4>
-            {% for ingredient in recipe.ingredients %} {% if ingredients %}
-            <p class="lead mt-1">{{ingredient.qty}} - {{ingredient.ing}}</p>
-            {% else %}
-            <p class="lead mt-1">{{ingredient.qty}} {{ingredient.ing}}</p>
-            {% endif %} {% endfor %}
+                {% for ingredient in recipe.ingredients %} {% if ingredient %}
+                <p class="lead mt-3 recipe-text">{{ingredient.qty}}  {{ingredient.ing}}</p>
+                {% endif %} {% endfor %}
         </div>
-        <div class="col-6">
+        <div class="col-sm-12 col-lg-6">
             <h4>Method</h4>
             {% for method in recipe.methods %} {% if method %}
-            <p class="lead mt-1">{{method.method}}</p>
+            <p class="lead mt-3 recipe-text">{{method.method}}</p>
             {% endif %} {% endfor %}
         </div>
     </div>
 </div>
-<div class="container text-center mt-5 mb-5">
+<div class="container text-center mt-5 mb-5 btn-desktop">
     <button class="btn btn-outline-success mr-2" type="submit">EDIT</button>
     <button class="btn btn-outline-danger ml-2" type="submit">DELETE</button>
+</div>
+<div class="container text-center mt-5 mb-5 btn-mobile">
+    <button class="btn btn-success mr-2" type="submit">EDIT</button>
+    <button class="btn btn-danger ml-2" type="submit">DELETE</button>
 </div>
 
 {% endfor %} {% endblock content %}
