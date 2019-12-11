@@ -52,7 +52,7 @@
     </div>
 </div>
 <div class="container text-center mt-5 mb-5 btn-desktop">
-    <button class="btn btn-outline-success mr-2" type="submit">EDIT</button>
+    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn btn-outline-success mr-2">EDIT</a>
     <button class="btn btn-outline-danger ml-2" type="submit">DELETE</button>
 </div>
 <div class="container text-center mt-5 mb-5 btn-mobile">

@@ -1,0 +1,252 @@
+{% extends "base.html" %} {% block content %}
+<div class="container bg-white mt-5">
+    <h1 class="display-4 pt-3">Add Recipe</h1>
+    <hr>
+    <form action="{{url_for('update_recipe', recipe_id=recipe._id)}}" method='POST' class="needs-validation" novalidate>
+        <div class="form-row">
+            <div class="col-lg-12 mb-3 mt-3">
+                <label for="title">Title Description</label>
+                <input type="text" class="form-control" id="title" name="title" aria-describedby="inputGroupPrepend" required pattern="[A-Za-z!?()&,. ]{5,60}" value="{{ recipe.title }}">
+                <div class="invalid-feedback">
+                    Input must be between 5 and 60 characters (NUM not valid).
+                </div>
+            </div>
+        </div>
+        </form>
+        </div>
+        
+<!--        <div class="form-row">-->
+<!--            <div class="col-lg-4 mb-3">-->
+<!--                <div class="form-group">-->
+<!--                    <label for="tag_1">Dish</label>-->
+<!--                    <input type="text" class="form-control" id="tag_1" name="tag_1" aria-describedby="inputGroupPrepend" required pattern="[A-Za-z!?()&,. ]{5,15}" value={{recipe.tag}}>-->
+<!--                    <div class="invalid-feedback">-->
+<!--                        Input must between 5 and 15 characters (NUM not valid) .-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-lg-4 mb-3">-->
+<!--                <div class="form-group">-->
+<!--                    <label for="tag_2">Food Type</label>-->
+<!--                    <select class="form-control" name="tag_2" id="tag_2" required value={{recipe.tag}}>-->
+<!--                        <option value="" selected disabled>Please select</option>-->
+<!--                        <option>Vegatables</option>-->
+<!--                        <option>Fruits</option>-->
+<!--                        <option>Grains</option>-->
+<!--                        <option>Beans</option>-->
+<!--                        <option>Meat</option>-->
+<!--                        <option>Poultry</option>-->
+<!--                        <option>Fish</option>-->
+<!--                        <option>Seafood</option>-->
+<!--                        <option>Dairy</option>-->
+<!--                        <option>Other</option>-->
+<!--                    </select>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-lg-4 mb-3">-->
+<!--                <div class="form-group">-->
+<!--                    <label for="tag_3">Cuisine Type</label>-->
+<!--                    <select class="form-control" name="tag_3" id="tag_3" required value={{recipe.tag}}>-->
+<!--                        <option value="" selected disabled>Please select</option>-->
+<!--                        <option>Mexican</option>-->
+<!--                        <option>Italian</option>-->
+<!--                        <option>Indian</option>-->
+<!--                        <option>Cajunn</option>-->
+<!--                        <option>Soul</option>-->
+<!--                        <option>Thai</option>-->
+<!--                        <option>Greek</option>-->
+<!--                        <option>Chinese</option>-->
+<!--                        <option>Lebanese</option>-->
+<!--                        <option>Japanese</option>-->
+<!--                        <option>American</option>-->
+<!--                        <option>Moroccan</option>-->
+<!--                        <option>Mediterranean</option>-->
+<!--                        <option>French</option>-->
+<!--                        <option>Spanish</option>-->
+<!--                        <option>German</option>-->
+<!--                        <option>Scandinavian</option>-->
+<!--                        <option>British</option>-->
+<!--                        <option>Irish</option>-->
+<!--                        <option>Korean</option>-->
+<!--                        <option>Vietnamese</option>-->
+<!--                        <option>Turkish</option>-->
+<!--                        <option>Caribbean</option>-->
+<!--                        <option>Vietnamese</option>-->
+<!--                        <option>Other</option>-->
+<!--                    </select>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="form-row">-->
+<!--            <div class="col-lg-4 mb-3">-->
+<!--                <label for="prep_time">Prep Time</label>-->
+<!--                <div class="input-group">-->
+<!--                    <input type="number" class="form-control" id="prep_time" name="prep_time" placeholder="1.25" aria-describedby="inputGroupPrepend" required min="0" max="20" step=".01">-->
+<!--                    <div class="input-group-append">-->
+<!--                        <label class="input-group-text" for="inputGroupSelect02">hrs</label>-->
+<!--                    </div>-->
+<!--                    <div class="invalid-feedback">-->
+<!--                        Input value can be from 0 to 20.-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-lg-4 mb-3">-->
+<!--                <label for="cook_time">Cook Time</label>-->
+<!--                <div class="input-group">-->
+<!--                    <input type="number" class="form-control" id="cook_time" name="cook_time" placeholder="5.75" aria-describedby="inputGroupPrepend" required min="0" max="20" step=".01">-->
+<!--                    <div class="input-group-append">-->
+<!--                        <label class="input-group-text" for="inputGroupSelect02">hrs</label>-->
+<!--                    </div>-->
+<!--                    <div class="invalid-feedback">-->
+<!--                        Input value can be from 0 to 20.-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-lg-4 mb-3">-->
+<!--                <label for="serving">Serving</label>-->
+<!--                <div class="input-group">-->
+<!--                    <input type="number" class="form-control" id="serving" name="serving" aria-describedby="inputGroupPrepend" required min="1" max="20">-->
+<!--                    <div class="invalid-feedback">-->
+<!--                        Input value can be from 1 to 20.-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="form-row">-->
+<!--            <div class="col-lg-12 mt-2 mb-3">-->
+<!--                <label for="image">Add image url (Default image has been set but you can choose to add your own url image)</label>-->
+<!--                <input type="url" class="form-control" id="image" name="image" placeholder='https://images.unsplash.com/photo-1542010589005-d1eacc3918f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1969&q=80' pattern='/([a-z\-_0-9\/\:\.]*\.(jpg|jpeg|png|gif))/i' size="30" aria-describedby="inputGroupPrepend">-->
+<!--                <div class="invalid-feedback">-->
+<!--                    Adding an image is OPTIONAL - if you wish to add an image please add a valid url address.-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="form-row">-->
+<!--            <div class="col-lg-6 mb-3">-->
+<!--                <label for="ing_1">Ingredient #1</label>-->
+<!--                <input type="text" class="form-control" id="ing_1" name="ing_1" aria-describedby="inputGroupPrepend" required pattern="[A-Za-z!?()&,. ]{5,40}">-->
+<!--                <div class="invalid-feedback">-->
+<!--                    Input must be between 5 and 20 characters (NUM not valid).-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-lg-6 mb-3">-->
+<!--                <label for="qty_1">Qty Amount</label>-->
+<!--                <input type="text" class="form-control" id="qty_1" name="qty_1" aria-describedby="inputGroupPrepend" required minlength="2" maxlength="15" size="15">-->
+<!--                <div class="invalid-feedback">-->
+<!--                    Input must be between 2 and 10 characters.-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="form-row">-->
+<!--            <div class="col-lg-6 mb-3">-->
+<!--                <label for="ing_2">Ingredient #2</label>-->
+<!--                <input type="text" class="form-control" id="ing_2" name="ing_2" aria-describedby="inputGroupPrepend" required pattern="[A-Za-z!?()&,. ]{5,40}">-->
+<!--                <div class="invalid-feedback">-->
+<!--                    Input must be between 5 and 20 characters (NUM not valid).-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-lg-6 mb-3">-->
+<!--                <label for="qty_2">Qty Amount</label>-->
+<!--                <input type="text" class="form-control" id="qty_2" name="qty_2" aria-describedby="inputGroupPrepend" required minlength="2" maxlength="15" size="15">-->
+<!--                <div class="invalid-feedback">-->
+<!--                    Input must be between 2 and 10 characters.-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="form-row">-->
+<!--            <div class="col-lg-6 mb-3">-->
+<!--                <label for="ing_3">Ingredient #3</label>-->
+<!--                <input type="text" class="form-control" id="ing_3" name="ing_3" aria-describedby="inputGroupPrepend" pattern="[A-Za-z!?()&,. ]{5,40}">-->
+<!--                <div class="invalid-feedback">-->
+<!--                    This field is OPTIONAL- 5 and 20 characters (NUM not valid).-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-lg-6 mb-3">-->
+<!--                <label for="qty_3">Qty Amount</label>-->
+<!--                <input type="text" class="form-control" id="qty_3" name="qty_3" aria-describedby="inputGroupPrepend" minlength="2" maxlength="15" size="15">-->
+<!--                <div class="invalid-feedback">-->
+<!--                    This field is OPTIONAL - between 2 and 10 characters.-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="form-row">-->
+<!--            <div class="col-lg-6 mb-3">-->
+<!--                <label for="ing_4">Ingredient #4</label>-->
+<!--                <input type="text" class="form-control" id="ing_4" name="ing_4" aria-describedby="inputGroupPrepend" pattern="[A-Za-z!?()&,. ]{5,40}">-->
+<!--                <div class="invalid-feedback">-->
+<!--                    This field is OPTIONAL- 5 and 20 characters (NUM not valid).-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-lg-6 mb-3">-->
+<!--                <label for="qty_4">Qty Amount</label>-->
+<!--                <input type="text" class="form-control" id="qty_4" name="qty_4" aria-describedby="inputGroupPrepend" minlength="2" maxlength="15" size="15">-->
+<!--                <div class="invalid-feedback">-->
+<!--                    This field is OPTIONAL - between 2 and 10 characters.-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="form-row">-->
+<!--            <div class="col-lg-6 mb-3">-->
+<!--                <label for="ing_5">Ingredient #5</label>-->
+<!--                <input type="text" class="form-control" id="ing_5" name="ing_5" aria-describedby="inputGroupPrepend" pattern="[A-Za-z!?()&,. ]{5,40}">-->
+<!--                <div class="invalid-feedback">-->
+<!--                    This field is OPTIONAL- 5 and 20 characters (NUM not valid).-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-lg-6 mb-3">-->
+<!--                <label for="qty_5">Qty Amount</label>-->
+<!--                <input type="text" class="form-control" id="qty_5" name="qty_5" aria-describedby="inputGroupPrepend" minlength="2" maxlength="15" size="15">-->
+<!--                <div class="invalid-feedback">-->
+<!--                    This field is OPTIONAL - between 2 and 10 characters.-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="form-row">-->
+<!--            <div class="col-lg-12 mb-3">-->
+<!--                <label for="method_1">Method #1</label>-->
+<!--                <input type="text" class="form-control" id="method_1" name="method_1" aria-describedby="inputGroupPrepend" required pattern="[A-Za-z!?()&,. ]{5,100}">-->
+<!--                <div class="invalid-feedback">-->
+<!--                    Input must be between 5 and 60 characters (NUM not valid).-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="form-row">-->
+<!--            <div class="col-lg-12 mb-3">-->
+<!--                <label for="method_2">Method #2</label>-->
+<!--                <input type="text" class="form-control" id="method_2" name="method_2" aria-describedby="inputGroupPrepend" required pattern="[A-Za-z!?()&,. ]{5,100}">-->
+<!--                <div class="invalid-feedback">-->
+<!--                    Input must be between 5 and 60 characters (NUM not valid).-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="form-row">-->
+<!--            <div class="col-lg-12 mb-3">-->
+<!--                <label for="method_3">Method #3</label>-->
+<!--                <input type="text" class="form-control" id="method_3" name="method_3" aria-describedby="inputGroupPrepend" pattern="[A-Za-z!?()&,. ]{5,100}">-->
+<!--                <div class="invalid-feedback">-->
+<!--                    This field is OPTIONAL- 5 and 60 characters (NUM not valid).-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="form-row">-->
+<!--            <div class="col-lg-12 mb-3">-->
+<!--                <label for="method_4">Method #4</label>-->
+<!--                <input type="text" class="form-control" id="method_4" name="method_4" aria-describedby="inputGroupPrepend" pattern="[A-Za-z!?()&,. ]{5,100}">-->
+<!--                <div class="invalid-feedback">-->
+<!--                    This field is OPTIONAL- 5 and 60 characters (NUM not valid).-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="form-row">-->
+<!--            <div class="col-lg-12 mb-3">-->
+<!--                <label for="method_5">Method #5</label>-->
+<!--                <input type="text" class="form-control" id="method_5" name="method_5" aria-describedby="inputGroupPrepend" pattern="[A-Za-z!?()&,. ]{5,100}">-->
+<!--                <div class="invalid-feedback">-->
+<!--                    This field is OPTIONAL- 5 and 60 characters (NUM not valid).-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <button class="btn btn-outline-info mb-5" type="submit">CONFIRM UPDATE</button>-->
+<!--    </form>-->
+<!--</div>-->
+{% endblock content %}
