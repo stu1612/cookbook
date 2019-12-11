@@ -37,28 +37,23 @@ def post_recipe():
         recipes = mongo.db.recipes
     recipes.insert({
         'title': request.form.get('title'),
-        'tags': [{'tag': request.form.get('tag_1')},
-                 {'tag': request.form.get('tag_2')},
-                 {'tag': request.form.get('tag_3')}],
+        'tag_1': request.form.get('tag_1'),
+        'tag_2': request.form.get('tag_2'),
+        'tag_3': request.form.get('tag_3'),
         'prep_time': request.form.get('prep_time'),
         'cook_time': request.form.get('cook_time'),
         'serving': request.form.get('serving'),
         'image': request.form.get('image'),
-        'ingredients': [{'ing': request.form.get('ing_1'),
-                        'qty': request.form.get('qty_1')},
-                        {'ing': request.form.get('ing_2'),
-                        'qty': request.form.get('qty_2')},
-                        {'ing': request.form.get('ing_3'),
-                        'qty': request.form.get('qty_3')},
-                        {'ing': request.form.get('ing_4'),
-                        'qty': request.form.get('qty_4')},
-                        {'ing': request.form.get('ing_5'),
-                        'qty': request.form.get('qty_5')}],
-        'methods': [{'method': request.form.get('method_1')},
-                    {'method': request.form.get('method_2')},
-                    {'method': request.form.get('method_3')},
-                    {'method': request.form.get('method_4')},
-                    {'method': request.form.get('method_5')}],
+        'ing_1': request.form.get('ing_1'),
+        'ing_2': request.form.get('ing_2'),
+        'ing_3': request.form.get('ing_3'),
+        'ing_4': request.form.get('ing_4'),
+        'ing_5': request.form.get('ing_5'),
+        'method_1': request.form.get('method_1'),
+        'method_2': request.form.get('method_2'),
+        'method_3': request.form.get('method_3'),
+        'method_4': request.form.get('method_4'),
+        'method_5': request.form.get('method_5'),
         })
 
     flash('Great - your recipe has been added to our collection !',
@@ -80,38 +75,33 @@ def the_recipe(recipe_id):
 
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
-    the_recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
-    return render_template('update_recipe.html', recipe=the_recipe,
+    a_recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
+    return render_template('update_recipe.html', recipe=a_recipe,
                        title='Update Recipe')
 
 
-@app.route('/update_recipe/<recipe_id>', methods=['POST'])
+@app.route('/update_recipe/<recipe_id>', methods=['GET', 'POST'])
 def update_recipe(recipe_id):
     recipes = mongo.db.recipes
-    recipes.update({'_id': ObjectId(recipe_id)}, {
-    'title': request.form.get('title'),
-    'tags': [{'tag': request.form.get('tag_1')},
-             {'tag': request.form.get('tag_2')},
-             {'tag': request.form.get('tag_3')}],
-    'prep_time': request.form.get('prep_time'),
-    'cook_time': request.form.get('cook_time'),
-    'serving': request.form.get('serving'),
-    'image': request.form.get('image'),
-    'ingredients': [{'ing': request.form.get('ing_1'),
-                    'qty': request.form.get('qty_1')},
-                    {'ing': request.form.get('ing_2'),
-                    'qty': request.form.get('qty_2')},
-                    {'ing': request.form.get('ing_3'),
-                    'qty': request.form.get('qty_3')},
-                    {'ing': request.form.get('ing_4'),
-                    'qty': request.form.get('qty_4')},
-                    {'ing': request.form.get('ing_5'),
-                    'qty': request.form.get('qty_5')}],
-    'methods': [{'method': request.form.get('method_1')},
-                {'method': request.form.get('method_2')},
-                {'method': request.form.get('method_3')},
-                {'method': request.form.get('method_4')},
-                {'method': request.form.get('method_5')}],
+    recipes.update_one({'_id': ObjectId(recipe_id)}, {
+        'title': request.form.get('title'),
+        'tag_1': request.form.get('tag_1'),
+        'tag_2': request.form.get('tag_2'),
+        'tag_3': request.form.get('tag_3'),
+        'prep_time': request.form.get('prep_time'),
+        'cook_time': request.form.get('cook_time'),
+        'serving': request.form.get('serving'),
+        'image': request.form.get('image'),
+        'ing_1': request.form.get('ing_1'),
+        'ing_2': request.form.get('ing_2'),
+        'ing_3': request.form.get('ing_3'),
+        'ing_4': request.form.get('ing_4'),
+        'ing_5': request.form.get('ing_5'),
+        'method_1': request.form.get('method_1'),
+        'method_2': request.form.get('method_2'),
+        'method_3': request.form.get('method_3'),
+        'method_4': request.form.get('method_4'),
+        'method_5': request.form.get('method_5'),
     })
 
     flash('Your updates have been successfully made', 'success')

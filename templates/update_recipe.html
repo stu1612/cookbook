@@ -16,7 +16,7 @@
             <div class="col-lg-4 mb-3">
                 <div class="form-group">
                     <label for="tag_1">Dish</label>
-                    <input type="text" class="form-control" id="tag_1" name="tag_1" aria-describedby="inputGroupPrepend" required pattern="[A-Za-z!?()&,. ]{5,15}">
+                    <input type="text" class="form-control" id="tag_1" name="tag_1" aria-describedby="inputGroupPrepend" required pattern="[A-Za-z!?()&,. ]{5,15}" value="{{ recipe.tag_1}}">
                     <div class="invalid-feedback">
                         Input must between 5 and 15 characters (NUM not valid) .
                     </div>
@@ -26,7 +26,7 @@
                 <div class="form-group">
                     <label for="tag_2">Food Type</label>
                     <select class="form-control" name="tag_2" id="tag_2" required>
-                        <option value="" selected disabled>Please select</option>
+                        <option value="{{recipe.tag_2}}" selected>{{recipe.tag_2}}t</option>
                         <option>Vegatables</option>
                         <option>Fruits</option>
                         <option>Grains</option>
@@ -44,7 +44,7 @@
                 <div class="form-group">
                     <label for="tag_3">Cuisine Type</label>
                     <select class="form-control" name="tag_3" id="tag_3" required>
-                        <option value="" selected disabled>Please select</option>
+                        <option value="{{recipe.tag_3}}" selected >{{recipe.tag_3}}</option>
                         <option>Mexican</option>
                         <option>Italian</option>
                         <option>Indian</option>
@@ -79,7 +79,7 @@
             <div class="col-lg-4 mb-3">
                 <label for="prep_time">Prep Time</label>
                 <div class="input-group">
-                    <input type="number" class="form-control" id="prep_time" name="prep_time" placeholder="1.25" aria-describedby="inputGroupPrepend" required min="0" max="20" step=".01" value={{recipe.prep_time}}>
+                    <input type="number" class="form-control" id="prep_time" name="prep_time" placeholder="1.25" aria-describedby="inputGroupPrepend" required min="0" max="20" step=".01" value="{{recipe.prep_time}}">
                     <div class="input-group-append">
                         <label class="input-group-text" for="inputGroupSelect02">hrs</label>
                     </div>
@@ -91,7 +91,7 @@
             <div class="col-lg-4 mb-3">
                 <label for="cook_time">Cook Time</label>
                 <div class="input-group">
-                    <input type="number" class="form-control" id="cook_time" name="cook_time" placeholder="5.75" aria-describedby="inputGroupPrepend" required min="0" max="20" step=".01" value={{recipe.cook_time}}>
+                    <input type="number" class="form-control" id="cook_time" name="cook_time" placeholder="5.75" aria-describedby="inputGroupPrepend" required min="0" max="20" step=".01" value="{{recipe.cook_time}}">
                     <div class="input-group-append">
                         <label class="input-group-text" for="inputGroupSelect02">hrs</label>
                     </div>
@@ -103,7 +103,7 @@
             <div class="col-lg-4 mb-3">
                 <label for="serving">Serving</label>
                 <div class="input-group">
-                    <input type="number" class="form-control" id="serving" name="serving" aria-describedby="inputGroupPrepend" required min="1" max="20" value={{recipe.serving}}>
+                    <input type="number" class="form-control" id="serving" name="serving" aria-describedby="inputGroupPrepend" required min="1" max="20" value="{{recipe.serving}}">
                     <div class="invalid-feedback">
                         Input value can be from 1 to 20.
                     </div>
@@ -113,31 +113,59 @@
         <div class="form-row">
             <div class="col-lg-12 mt-2 mb-3">
                 <label for="image">Add image url (Default image has been set but you can choose to add your own url image)</label>
-                <input type="url" class="form-control" id="image" name="image" placeholder='https://images.unsplash.com/photo-1542010589005-d1eacc3918f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1969&q=80' pattern='/([a-z\-_0-9\/\:\.]*\.(jpg|jpeg|png|gif))/i' size="30" aria-describedby="inputGroupPrepend" value={{recipe.image}}>
+                <input type="url" class="form-control" id="image" name="image" placeholder='https://images.unsplash.com/photo-1542010589005-d1eacc3918f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1969&q=80' pattern='/([a-z\-_0-9\/\:\.]*\.(jpg|jpeg|png|gif))/i' size="30" aria-describedby="inputGroupPrepend" value="{{recipe.image}}">
                 <div class="invalid-feedback">
                     Adding an image is OPTIONAL - if you wish to add an image please add a valid url address.
                 </div>
             </div>
         </div>
         <h4>Ingredients</h4>
-        {% for ingredient in recipe.ingredients %}
         <div class="form-row">
-            <div class="col-lg-6 mb-3">
+            <div class="col-lg-12 mb-3">
                 <label for="ing_1">Ingredient </label>
-                <input type="text" class="form-control" id="ing_1" name="ing_1" aria-describedby="inputGroupPrepend" required pattern="[A-Za-z!?()&,. ]{5,40}" value={{ingredient.ing}}>
+                <input type="text" class="form-control" id="ing_1" name="ing_1" aria-describedby="inputGroupPrepend" required pattern="[A-Za-z!?()&,. ]{5,40}" value="{{recipe.ing_1}}">
                 <div class="invalid-feedback">
-                    Input must be between 5 and 20 characters (NUM not valid).
-                </div>
-            </div>
-            <div class="col-lg-6 mb-3">
-                <label for="qty_1">Qty Amount</label>
-                <input type="text" class="form-control" id="qty_1" name="qty_1" aria-describedby="inputGroupPrepend" required minlength="2" maxlength="15" size="15" value={{ingredient.qty}}>
-                <div class="invalid-feedback">
-                    Input must be between 2 and 10 characters.
+                    Input must be between 5 and 40 characters.
                 </div>
             </div>
         </div>
-        {% endfor %}
+        <div class="form-row">
+            <div class="col-lg-12 mb-3">
+                <label for="ing_2">Ingredient </label>
+                <input type="text" class="form-control" id="ing_2" name="ing_2" aria-describedby="inputGroupPrepend" required pattern="[A-Za-z!?()&,. ]{5,40}" value="{{recipe.ing_2}}">
+                <div class="invalid-feedback">
+                    Input must be between 5 and 40 characters.
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-lg-12 mb-3">
+                <label for="ing_3">Ingredient </label>
+                <input type="text" class="form-control" id="ing_3" name="ing_3" aria-describedby="inputGroupPrepend" pattern="[A-Za-z!?()&,. ]{5,40}" value="{{recipe.ing_3}}">
+                <div class="invalid-feedback">
+                    This field is OPTIONAL - Input must be between 5 and 40 characters.
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-lg-12 mb-3">
+                <label for="ing_4">Ingredient </label>
+                <input type="text" class="form-control" id="ing_4" name="ing_4" aria-describedby="inputGroupPrepend" pattern="[A-Za-z!?()&,. ]{5,40}" value="{{recipe.ing_4}}">
+                <div class="invalid-feedback">
+                    This field is OPTIONAL - Input must be between 5 and 40 characters.
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-lg-12 mb-3">
+                <label for="ing_5">Ingredient </label>
+                <input type="text" class="form-control" id="ing_5" name="ing_5" aria-describedby="inputGroupPrepend" pattern="[A-Za-z!?()&,. ]{5,40}" value="{{recipe.ing_5}}">
+                <div class="invalid-feedback">
+                    This field is OPTIONAL - Input must be between 5 and 40 characters.
+                </div>
+            </div>
+        </div>
+        
         <!--<div class="form-row">-->
         <!--    <div class="col-lg-6 mb-3">-->
         <!--        <label for="ing_2">Ingredient #2</label>-->
@@ -203,17 +231,53 @@
         <!--    </div>-->
         <!--</div>-->
         <h4>Methods</h4>
-        {% for method in recipe.methods%}
+        
         <div class="form-row">
             <div class="col-lg-12 mb-3">
-                <label for="method_1">Method</label>
-                <input type="text" class="form-control" id="method_1" name="method_1" aria-describedby="inputGroupPrepend" required pattern="[A-Za-z!?()&,. ]{5,100}" value={{method.method}}>
+                <label for"method_1">Method</label>
+                <input type="text" class="form-control" id="method_1" name="method_1" aria-describedby="inputGroupPrepend" required pattern="[A-Za-z!?()&,. ]{5,60}" value="{{recipe.method_1}}">
                 <div class="invalid-feedback">
                     Input must be between 5 and 60 characters (NUM not valid).
                 </div>
             </div>
         </div>
-        {% endfor %}
+        <div class="form-row">
+            <div class="col-lg-12 mb-3">
+                <label for"method_2">Method</label>
+                <input type="text" class="form-control" id="method_2" name="method_2" aria-describedby="inputGroupPrepend" required pattern="[A-Za-z!?()&,. ]{5,60}" value="{{recipe.method_2}}">
+                <div class="invalid-feedback">
+                    Input must be between 5 and 60 characters (NUM not valid).
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-lg-12 mb-3">
+                <label for"method_3">Method</label>
+                <input type="text" class="form-control" id="method_3" name="method_3" aria-describedby="inputGroupPrepend" pattern="[A-Za-z!?()&,. ]{5,60}" value="{{recipe.method_3}}">
+                <div class="invalid-feedback">
+                    This field is OPTIONAL- Input must be between 5 and 60 characters (NUM not valid).
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-lg-12 mb-3">
+                <label for"method_4">Method</label>
+                <input type="text" class="form-control" id="method_4" name="method_4" aria-describedby="inputGroupPrepend" pattern="[A-Za-z!?()&,. ]{5,60}" value="{{recipe.method_4}}">
+                <div class="invalid-feedback">
+                    This field is OPTIONAL- Input must be between 5 and 60 characters (NUM not valid).
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-lg-12 mb-3">
+                <label for"method_5">Method</label>
+                <input type="text" class="form-control" id="method_5" name="method_5" aria-describedby="inputGroupPrepend" pattern="[A-Za-z!?()&,. ]{5,60}" value="{{recipe.method_5}}">
+                <div class="invalid-feedback">
+                    This field is OPTIONAL- Input must be between 5 and 60 characters (NUM not valid).
+                </div>
+            </div>
+        </div>
+        
         <!--<div class="form-row">-->
         <!--    <div class="col-lg-12 mb-3">-->
         <!--        <label for="method_2">Method #2</label>-->
