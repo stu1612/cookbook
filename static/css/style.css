@@ -23,7 +23,7 @@ body {
 }
 
 .the-card-img {
-    height: 70vh;
+    max-height: 70vh;
     width: 100%;
 }
 
@@ -35,30 +35,11 @@ body {
     display: none;
 }
 
-/*img hover effect*/
-
-.card {
-    width: 90%;
-    overflow: hidden;
-    position: relative;
-    float: left;
+.col-lg-4 a {
+    color: #111111;
+    text-decoration: none;
 }
 
-.card img {
-  display: block;
-  position: relative;
-  -webkit-transition: all 0.4s ease-in;
-  transition: all 0.4s ease-in;
-  max-width: 100%;
-  width: 100%;
-  height: 30vh;
-}
-
-.card:hover img {
-  -webkit-transform: scale(1.05);
-  -ms-transform: scale(1.05);
-  transform: scale(1.05);
-}
 
 /*---------------------------*/
 
@@ -84,9 +65,46 @@ body {
 
 /*recipes.html*/
 
+/*img hover effect*/
+
 #recipe-card {
     height: 150px;
 }
+
+.card-title {
+    font-size: 1.8rem;
+}
+
+.card {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    float: left;
+    height: 100%;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card img {
+    display: block;
+    position: relative;
+    -webkit-transition: all 0.4s ease-in;
+    transition: all 0.4s ease-in;
+    max-width: 100%;
+    /*width: 100%;*/
+    height: 30vh;
+}
+
+.card:hover img {
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+    border-color: black!important;
+}
+
+
 
 /*add_recipes.html*/
 
