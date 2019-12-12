@@ -22,11 +22,6 @@ body {
     padding: 0;
 }
 
-.the-card-img {
-    max-height: 70vh;
-    width: 100%;
-}
-
 .tags-mobile-view {
     display: none;
 }
@@ -104,7 +99,25 @@ body {
     border-color: black!important;
 }
 
+/*the_recipes.html*/
 
+.the-card-img {
+    height: 70vh;
+    width: 100%;
+}
+
+.recipe-text-col {
+    padding-left: 0;
+    display: flex;
+    height: 70vh;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.recipe-title, .recipe-text {
+    width: 80%;
+    margin: auto;
+}
 
 /*add_recipes.html*/
 
@@ -123,7 +136,12 @@ body {
         height: 20vh;
     }
     .the-card-img {
-        height: auto;
+        height: 550px;
+    }
+    .recipe-title,
+    .recipe-text {
+        width: 80%;
+        margin: auto;
     }
 }
 
