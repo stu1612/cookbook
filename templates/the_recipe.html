@@ -1,4 +1,27 @@
 {% extends "base.html" %} {% block content %} {% for recipe in recipes %}
+
+<div class="wrapper">
+    <img src="{{recipe.image}}" class="img-responsive image" alt="displayed url image from user">
+    <div class="wrapper-inner">
+        <h2>{{ recipe.title.capitalize() }}</h2>
+        <!--<div class="container text-center mt-5 mb-5 btn-desktop">-->
+            <a href="{{ url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn btn-outline-success mr-2">EDIT</a>
+            <button type="button" class="btn btn-outline-danger mr-2" data-toggle="modal" data-target="#myModal">DELETE</button>
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body" <p>Deleting will permantly remove this recipe!</p>
+                            <a href="{{ url_for('delete_recipe', recipe_id=recipe._id)}}" class="btn btn-danger">YES, DELETE</a>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!--</div>-->
+    </div>
+</div>
 <div class="container-fluid bg-white text-center">
     <div class="row">
         <div class="col-lg-12 col-xl-6">
@@ -39,40 +62,40 @@
     <div class="row justify-content-center pt-5">
         <div class="col-sm-12 col-lg-4">
             <h4>Ingredients</h4>
-                
-                <p class="lead mt-3 recipe-text">{{recipe.ing_1}}</p>
-                <p class="lead mt-3 recipe-text">{{recipe.ing_2}}</p>
-                <p class="lead mt-3 recipe-text">{{recipe.ing_3}}</p>
-                <p class="lead mt-3 recipe-text">{{recipe.ing_4}}</p>
-                <p class="lead mt-3 recipe-text">{{recipe.ing_5}}</p>
-                
+
+            <p class="lead mt-3 recipe-text">{{recipe.ing_1}}</p>
+            <p class="lead mt-3 recipe-text">{{recipe.ing_2}}</p>
+            <p class="lead mt-3 recipe-text">{{recipe.ing_3}}</p>
+            <p class="lead mt-3 recipe-text">{{recipe.ing_4}}</p>
+            <p class="lead mt-3 recipe-text">{{recipe.ing_5}}</p>
+
         </div>
         <div class="col-sm-12 col-lg-6">
             <h4>Method</h4>
-            
+
             <p class="lead mt-3 recipe-text">{{recipe.method_1}}</p>
             <p class="lead mt-3 recipe-text">{{recipe.method_2}}</p>
             <p class="lead mt-3 recipe-text">{{recipe.method_3}}</p>
             <p class="lead mt-3 recipe-text">{{recipe.method_4}}</p>
             <p class="lead mt-3 recipe-text">{{recipe.method_5}}</p>
-            
+
         </div>
     </div>
 </div>
-<div class="container text-center mt-5 mb-5 btn-desktop">
-    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn btn-outline-success mr-2">EDIT</a>
-    <button type="button" class="btn btn-outline-danger mr-2" data-toggle="modal" data-target="#myModal">DELETE</button>
-    <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body" <p>Deleting will permantly remove this recipe!</p>
-                    <a href="{{ url_for('delete_recipe', recipe_id=recipe._id)}}" class="btn btn-danger">YES, DELETE</a>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<!--<div class="container text-center mt-5 mb-5 btn-desktop">-->
+<!--    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn btn-outline-success mr-2">EDIT</a>-->
+<!--    <button type="button" class="btn btn-outline-danger mr-2" data-toggle="modal" data-target="#myModal">DELETE</button>-->
+<!--    <div class="modal fade" id="myModal" role="dialog">-->
+<!--        <div class="modal-dialog">-->
+<!--            <div class="modal-content">-->
+<!--                <div class="modal-body" <p>Deleting will permantly remove this recipe!</p>-->
+<!--                    <a href="{{ url_for('delete_recipe', recipe_id=recipe._id)}}" class="btn btn-danger">YES, DELETE</a>-->
+<!--                </div>-->
+<!--                <div class="modal-footer">-->
+<!--                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 {% endfor %} {% endblock content %}

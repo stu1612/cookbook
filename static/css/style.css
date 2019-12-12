@@ -101,6 +101,31 @@ body {
 
 /*the_recipes.html*/
 
+.wrapper {
+    position: relative;
+    /*width: 100%;*/
+}
+
+.wrapper img {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    z-index: 0;
+}
+
+.wrapper-inner {
+    background-color: #DDDDDD;
+    opacity: 0.8;
+    position: absolute;
+    z-index: 10;
+    text-align: center;
+    padding: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #111111;
+}
+
 .the-card-img {
     height: 70vh;
     width: 100%;
