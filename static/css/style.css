@@ -26,7 +26,6 @@ body {
     text-decoration: none;
 }
 
-
 /*---------------------------*/
 
 /*home.html*/
@@ -208,6 +207,19 @@ body {
     }
     .wrapper-inner h2 {
         font-size: 2rem;
+    }
+    .wrapper-img {
+        width: 100%;
+        display: none;
+    }
+    .second-wrapper {
+        position: static;
+    }
+    .second-wrapper-inner {
+        position: static;
+        top: none;
+        left: none;
+        transform: translate(-0%, -0%);
     }
 }
 

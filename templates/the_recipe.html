@@ -16,17 +16,17 @@
             </div>
             <div class="col-lg-6 second-wrapper-inner">
                 <div class="container icons text-center">
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis </p>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis </p>
                     <a href="#" class="badge badge-info mt-3">{{recipe.tag_1}}</a>
                     <a href="#" class="badge badge-info mt-3">{{recipe.tag_2}}</a>
                     <a href="#" class="badge badge-info mt-3">{{recipe.tag_3}}</a>
                     <div class="container text-center mt-3">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-3">
+                        <div class="row justify-content-center pt-2">
+                            <div class="col-4">
                                 <i class="far fa-clock fa-2x"></i>
                                 <p class="lead mt-1">{{recipe.cook_time}} hrs</p>
                             </div>
-                            <div class="col-lg-3">
+                            <div class="col-4">
                                 <i class="fas fa-utensils fa-2x"></i>
                                 <p class="lead mt-1">{{recipe.serving}} ppl</p>
                             </div>
@@ -59,7 +59,7 @@
         </div>
     </div>
 </div>
-<div class="container text-center mt-5 mb-5 btn-desktop">
+<div class="container text-center mt-5 mb-5">
     <a href="{{ url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn btn-outline-success mr-2">EDIT</a>
     <button type="button" class="btn btn-outline-danger mr-2" data-toggle="modal" data-target="#myModal">DELETE</button>
     <div class="modal fade" id="myModal" role="dialog">
