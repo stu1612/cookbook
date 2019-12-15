@@ -1,7 +1,7 @@
-<!--HTML page displaying recipe cards-->
+<!--HTML page displaying 'search food type' recipe cards-->
 {% extends "base.html" %} {% block content %}
 <div class="container mt-5">
-    <h1 class="display-4 pt-3 text-center">Recipe Collections</h1>
+    <h1 class="display-4 pt-3 text-center">Found Recipe Collections</h1>
     <hr>
     <div class="row">
         {% for recipe in recipes %}
@@ -23,20 +23,4 @@
         {% endfor %}
     </div>
 </div>
-
-<div class="container pt-5 page-counter">
-    <div class="row">
-    <ul class="pagination">
-        {% for page_number in pages %} {% if page_number == current_page %}
-        <li class="active"><a class="btn btn-info paginate">{{ page_number }}</a></li>
-        {% else %}
-        <li class="waves-effect"><a href="{{ url_for('recipes', current_page=page_number) }}" class="btn btn-info paginate">{{ page_number }}</a></li>
-        {% endif %} {% endfor %}
-    </ul>
-    </div>
-</div>
-<footer>
-    <h4>bye bye</h4>
-</footer>
 {% endblock content %}
-

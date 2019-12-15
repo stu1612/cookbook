@@ -1,8 +1,10 @@
-import os
+import os, math
 from flask import Flask, render_template, url_for, request, flash, \
     redirect
-from flask_pymongo import PyMongo
+from flask_pymongo import PyMongo, pymongo
 from bson.objectid import ObjectId
+from flask_paginate import Pagination
+
 
 app = Flask(__name__)
 app.config['MONGO_DBNAME'] = 'cook_book'
@@ -20,8 +22,15 @@ def home():
 
 @app.route('/recipes')
 def recipes():
+     # Pagination function
+    page_limit = 6
+    current_page = int(request.args.get('current_page', 1))
+    total = mongo.db.recipes.count()
+    pages = range(1, int(math.ceil(total / page_limit)) + 1)
+    recipes = mongo.db.recipes.find().sort('_id', pymongo.DESCENDING).skip(
+                            (current_page - 1)*page_limit).limit(page_limit)
     return render_template('recipes.html',
-                           recipes=mongo.db.recipes.find(),
+                           recipes=recipes,pages=pages,current_page=current_page,
                            title='Recipes')
 
 
@@ -114,7 +123,24 @@ def delete_recipe(recipe_id):
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
     flash('The recipe has been deleted', 'primary')
     return redirect(url_for('recipes'))
-    
+   
+   
+@app.route('/search_food_type')
+def search_food_type():
+    return render_template('search_food_type.html',
+                           recipes=mongo.db.recipes.find(),
+                           title='Found Food Type Recipes')
+                           
+                           
+@app.route('/search_recipe_food_type', methods=['POST'])
+def search_recipe_food_type():
+    recipes=mongo.db.recipes.find(),
+    search = request.form.get('search_recipes_food_type')
+    tag_2 = mongo.db.recipes.find({"tag_2"})
+    count = tag_2.count()
+    return render_template('search_food_type.html', recipes=recipes, search=search, count=count,tag_2=tag_2,
+                           title='Found Food Type Recipes')                           
+                           
     
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'), port=int(os.environ.get('PORT'
