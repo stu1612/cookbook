@@ -6,32 +6,10 @@
     </div>
 </div>
 
-<div class="container">
-    <form method="POST" action="{{ url_for('search_food_type') }}">
-        <div class="row">
-            <div class="col-lg-4 mb-3">
-                <div class="form-group">
-                    <label for="tag_2">Food Type</label>
-                    <select class="form-control" name="tag_2" id="tag_2" required>
-                        <option value="" selected disabled>Please select</option>
-                        <option>Vegatables</option>
-                        <option>Fruits</option>
-                        <option>Grains</option>
-                        <option>Beans</option>
-                        <option>Meat</option>
-                        <option>Poultry</option>
-                        <option>Fish</option>
-                        <option>Seafood</option>
-                        <option>Dairy</option>
-                        <option>Other</option>
-                    </select>
-                </div>
-            </div>
-
-        </div>
-        <button class="btn btn-outline-info mb-5" type="submit">CONFIRM UPDATE</button>
-    </form>
-</div>
+<form action="{{ url_for('post_search') }}" method="POST">
+    <input type="text" id="q" name="q" placeholder="Search">
+    <button type="submit">Search</button>
+</form>
 
 
 {% endblock content %}

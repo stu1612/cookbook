@@ -28,9 +28,9 @@
     <div class="row">
     <ul class="pagination">
         {% for page_number in pages %} {% if page_number == current_page %}
-        <li class="active"><a class="btn btn-info paginate">{{ page_number }}</a></li>
+        <li class="active"><a class="btn btn-outline-info paginate">{{ page_number }}</a></li>
         {% else %}
-        <li class="waves-effect"><a href="{{ url_for('recipes', current_page=page_number) }}" class="btn btn-info paginate">{{ page_number }}</a></li>
+        <li class="waves-effect"><a href="{{ url_for('recipes', current_page=page_number) }}" class="btn btn-outline-info paginate">{{ page_number }}</a></li>
         {% endif %} {% endfor %}
     </ul>
     </div>

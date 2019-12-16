@@ -120,27 +120,20 @@ def update_recipe(recipe_id):
 
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
-    mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
+    mongo.db.recipes.remove()
     flash('The recipe has been deleted', 'primary')
     return redirect(url_for('recipes'))
    
-   
-@app.route('/search_food_type')
-def search_food_type():
-    return render_template('search_food_type.html',
-                           recipes=mongo.db.recipes.find(),
-                           title='Found Food Type Recipes')
-                           
-                           
-@app.route('/search_recipe_food_type', methods=['POST'])
-def search_recipe_food_type():
-    recipes=mongo.db.recipes.find(),
-    search = request.form.get('search_recipes_food_type')
-    tag_2 = mongo.db.recipes.find({"tag_2"})
-    count = tag_2.count()
-    return render_template('search_food_type.html', recipes=recipes, search=search, count=count,tag_2=tag_2,
-                           title='Found Food Type Recipes')                           
-                           
+
+
+@app.route('/post_search', methods=['POST'])
+def post_search():
+        if request.method == "POST":
+            query = request.form.get('q') 
+            results = mongo.db.recipes.find({'$text':{'$search': query}}) 
+            return render_template('filtered_search.html', results=results, query=query, title='Selected Recipe')   
+    
+    
     
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'), port=int(os.environ.get('PORT'
