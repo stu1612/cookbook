@@ -7,7 +7,6 @@ body {
     background-color: #f5f5f5;
     overflow-x: hidden;
     scroll-behavior: auto;
-    overflow-y: scroll;
 }
 
 .paginate {
@@ -178,6 +177,12 @@ body {
 }
 
 /*add_recipes.html*/
+
+/*search.html*/
+
+.img-search {
+    height: 250px;
+}
 
 /*MEDIA QUERIES*/
 

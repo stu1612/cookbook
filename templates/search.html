@@ -1,0 +1,79 @@
+{% extends "base.html" %} {% block content %}
+<div class="container mt-5 p-3 bg-white text-center">
+    <div class="row align-items-center">
+        <div class="col-lg-6">
+            <img src="https://images.unsplash.com/photo-1543261207-45df64507ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=966&q=80" class="img-responsive img-search" alt="image of a selection of red meat">
+        </div>
+        <div class="col-lg-6">
+            <h3 class="font-weight-light">Looking for meat, vegetarian or dairy dishes ? Start HERE ! </h3>
+            <form action="{{ url_for('post_search_food_type') }}" id="post_search_food_type" name="post_search_food_type" method="POST">
+                <div class="input-group mt-4 home-input">
+                    <select class="form-control" id="post_search_food_type" name="post_search_food_type">
+                        <option value="" selected disabled>Search for recipe food types here !</option>
+                            <option>Vegatables</option>
+                            <option>Fruits</option>
+                            <option>Grains</option>
+                            <option>Beans</option>
+                            <option>Meat</option>
+                            <option>Poultry</option>
+                            <option>Fish</option>
+                            <option>Seafood</option>
+                            <option>Dairy</option>
+                            <option>Other</option>
+                    </select>
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-info" type="submit">Find</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="container mt-5 p-3 bg-white text-center">
+    <div class="row align-items-center">
+        <div class="col-lg-6">
+            <h3 class="font-weight-light">Fancy something Mexican, Turkish or Lebanese ? Start HERE ! </h3>
+                <form action="{{ url_for('post_search_food_cuisine') }}" id="post_search_food_cuisine" name="post_search_food_cuisine" method="POST">
+                <div class="input-group mt-4 home-input">
+                    <select class="form-control" id="post_search_food_cuisine" name="post_search_food_cuisine">
+                        <option value="" selected disabled>Search for recipe food cuisines here !</option>
+                            <option>Mexican</option>
+                            <option>Italian</option>
+                            <option>Indian</option>
+                            <option>Cajun</option>
+                            <option>Soul</option>
+                            <option>Thai</option>
+                            <option>Greek</option>
+                            <option>Chinese</option>
+                            <option>Lebanese</option>
+                            <option>Japanese</option>
+                            <option>American</option>
+                            <option>Moroccan</option>
+                            <option>Mediterranean</option>
+                            <option>French</option>
+                            <option>Spanish</option>
+                            <option>German</option>
+                            <option>Scandinavian</option>
+                            <option>British</option>
+                            <option>Irish</option>
+                            <option>Korean</option>
+                            <option>Vietnamese</option>
+                            <option>Turkish</option>
+                            <option>Caribbean</option>
+                            <option>Vietnamese</option>
+                            <option>Other</option>
+                    </select>
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-info" type="submit">Find</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-6">
+            <img src="https://images.unsplash.com/photo-1464219222984-216ebffaaf85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" class="img-responsive img-search" alt="image of mexican food dish">
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
