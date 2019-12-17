@@ -1,0 +1,49 @@
+{% extends "base.html" %} {% block content %}{% block search_content %}
+
+<div class="jumbotron mt-5 text-center bg-info text-white">
+    <h2>Welcome to Cook Book - we hope you enjoy cooking as much as we enjoy inspiring</h2>
+</div>
+<div class="container mt-5 p-5 bg-white text-center">
+    <div class="row align-items-center">
+        <div class="col-lg-5">
+            <img src="https://images.unsplash.com/photo-1481669624812-c47721341026?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1013&q=80" class="img-responsive img-homepg" alt="person standing at a cooking station">
+        </div>
+        <div class="col-lg-7">
+            <h3>Need some recipe inspiration ? </h3>
+            <form action="{{ url_for('post_search_food_type') }}" id="post_search_food_type" name="post_search_food_type" method="POST">
+                <div class="input-group">
+                    <select class="form-control" id="post_search_food_type" name="post_search_food_type">
+                        <option value="" selected disabled>Search for recipe food types here !</option>
+                            <option>Vegatables</option>
+                            <option>Fruits</option>
+                            <option>Grains</option>
+                            <option>Beans</option>
+                            <option>Meat</option>
+                            <option>Poultry</option>
+                            <option>Fish</option>
+                            <option>Seafood</option>
+                            <option>Dairy</option>
+                            <option>Other</option>
+                    </select>
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-info" type="submit">Find</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="container mt-5 p-5 bg-white text-center" id="search-nav">
+    <div class="row align-items-center">
+        <div class="col-lg-7">
+            <h3>Feeling inspired ! Want to share ? </h3>
+            <a href="{{ url_for('add_recipe')}}" class="btn btn-outline-info mt-3">Create Recipe</a>
+        </div>
+        <div class="col-lg-5">
+            <img src="https://images.unsplash.com/photo-1482932973216-15c6808e8691?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1934&q=80" class="img-responsive img-homepg" alt="person cooking at a food station">
+        </div>
+    </div>
+</div>
+
+{% endblock search_content %}
+{% endblock content %}

@@ -29,8 +29,9 @@ def recipes():
     pages = range(1, int(math.ceil(total / page_limit)) + 1)
     recipes = mongo.db.recipes.find().sort('_id', pymongo.DESCENDING).skip(
                             (current_page - 1)*page_limit).limit(page_limit)
+    count = recipes.count()
     return render_template('recipes.html',
-                           recipes=recipes,pages=pages,current_page=current_page,
+                           recipes=recipes, count=count,pages=pages,current_page=current_page,
                            title='Recipes')
 
 

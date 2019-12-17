@@ -1,16 +1,16 @@
-<!--HTML page displaying recipe cards-->
+<!--HTML page displaying 'search food type' recipe cards-->
 {% extends "base.html" %} {% block content %}
 <div class="container mt-5">
-    <h1 class="display-4 pt-3 text-center">Recipes - {{count}} Collections</h1>
+    <h1 class="display-4 pt-3 text-center">Returned Recipe Collection - {{count}}</h1>
     {% if count == 0 %}
     <div class="container text-center">
-        <h5 class="text-center font-weight-light mt-5">No recipes have been created yet.</h5>
-        <a href="#" class="btn btn-outline-info">Create</a>
+        <h5 class="text-center font-weight-light mt-5">This recipe food type has not yet been created.</h5>
+        <a href="#" class="btn btn-outline-info">Search Again</a>
     </div>
     {% endif %}
     <hr>
     <div class="row">
-        {% for recipe in recipes %}
+        {% for recipe in post_search_food_type %}
         <div class="col-sm-12 col-md-6 col-lg-4 mb-5">
             <div class="text-center mt-5">
                 <span class="badge badge-pill badge-info">{{recipe.tag_1.capitalize()}}</span> | 
@@ -31,20 +31,4 @@
         {% endfor %}
     </div>
 </div>
-
-<div class="container pt-5 page-counter">
-    <div class="row">
-    <ul class="pagination">
-        {% for page_number in pages %} {% if page_number == current_page %}
-        <li class="active"><a class="btn btn-outline-info paginate">{{ page_number }}</a></li>
-        {% else %}
-        <li class="waves-effect"><a href="{{ url_for('recipes', current_page=page_number) }}" class="btn btn-outline-info paginate">{{ page_number }}</a></li>
-        {% endif %} {% endfor %}
-    </ul>
-    </div>
-</div>
-<footer>
-    <h4>bye bye</h4>
-</footer>
 {% endblock content %}
-
