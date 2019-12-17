@@ -1,7 +1,7 @@
 <!--HTML page displaying recipe cards-->
 {% extends "base.html" %} {% block content %}
 <div class="container mt-5">
-    <h1 class="display-4 pt-3 text-center">Recipes - {{count}} Collections</h1>
+    <h1 class="display-4 pt-3 text-center">Recipes Collections | <span class="badge badge-pill badge-info">{{count}}</span></h1>
     {% if count == 0 %}
     <div class="container text-center">
         <h5 class="text-center font-weight-light mt-5">No recipes have been created yet.</h5>

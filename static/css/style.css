@@ -63,6 +63,11 @@ body {
     height: 300px;    
 }
 
+.home-input {
+    width: 80%;
+    margin: auto;
+}
+
 /*recipes.html*/
 
 /*img hover effect*/

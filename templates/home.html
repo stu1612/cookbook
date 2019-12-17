@@ -16,7 +16,7 @@
         <div class="col-lg-7">
             <h3>Need some recipe inspiration ? </h3>
             <form action="{{ url_for('post_search_food_type') }}" id="post_search_food_type" name="post_search_food_type" method="POST">
-                <div class="input-group">
+                <div class="input-group mt-4 home-input">
                     <select class="form-control" id="post_search_food_type" name="post_search_food_type">
                         <option value="" selected disabled>Search for recipe food types here !</option>
                             <option>Vegatables</option>
@@ -28,6 +28,42 @@
                             <option>Fish</option>
                             <option>Seafood</option>
                             <option>Dairy</option>
+                            <option>Other</option>
+                    </select>
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-info" type="submit">Find</button>
+                    </div>
+                </div>
+            </form>
+            
+            <form action="{{ url_for('post_search_food_cuisine') }}" id="post_search_food_cuisine" name="post_search_food_cuisine" method="POST">
+                <div class="input-group mt-4 home-input">
+                    <select class="form-control" id="post_search_food_cuisine" name="post_search_food_cuisine">
+                        <option value="" selected disabled>Search for recipe food cuisines here !</option>
+                            <option>Mexican</option>
+                            <option>Italian</option>
+                            <option>Indian</option>
+                            <option>Cajun</option>
+                            <option>Soul</option>
+                            <option>Thai</option>
+                            <option>Greek</option>
+                            <option>Chinese</option>
+                            <option>Lebanese</option>
+                            <option>Japanese</option>
+                            <option>American</option>
+                            <option>Moroccan</option>
+                            <option>Mediterranean</option>
+                            <option>French</option>
+                            <option>Spanish</option>
+                            <option>German</option>
+                            <option>Scandinavian</option>
+                            <option>British</option>
+                            <option>Irish</option>
+                            <option>Korean</option>
+                            <option>Vietnamese</option>
+                            <option>Turkish</option>
+                            <option>Caribbean</option>
+                            <option>Vietnamese</option>
                             <option>Other</option>
                     </select>
                     <div class="input-group-append">
