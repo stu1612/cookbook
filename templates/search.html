@@ -74,6 +74,15 @@
         </div>
     </div>
 </div>
-
+<div class="container mt-5">
+    <div class="input-group mb-3">
+        <form action="{{ url_for('post_search_title') }}" id="post_search_title" name="post_search_title" method="POST">
+            <input type="text" class="form-control" id="post_search_title" name="post_search_title">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="submit">Button</button>
+            </div>
+        </form>
+    </div>
+</div>
 
 {% endblock content %}

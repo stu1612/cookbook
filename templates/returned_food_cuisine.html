@@ -31,4 +31,16 @@
         {% endfor %}
     </div>
 </div>
+
+<div class="container pt-5 page-counter">
+    <div class="row">
+    <ul class="pagination">
+        {% for page_number in pages %} {% if page_number == current_page %}
+        <li class="active"><a class="btn btn-outline-info paginate">{{ page_number }}</a></li>
+        {% else %}
+        <li class="waves-effect"><a href="{{ url_for('recipes', current_page=page_number) }}" class="btn btn-outline-info paginate">{{ page_number }}</a></li>
+        {% endif %} {% endfor %}
+    </ul>
+    </div>
+</div>
 {% endblock content %}

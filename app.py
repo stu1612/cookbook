@@ -148,7 +148,14 @@ def post_search_food_cuisine():
         count = post_search_food_cuisine.count()
         return render_template("returned_food_cuisine.html", recipes=recipes, post_search_food_cuisine=post_search_food_cuisine, count=count, title="Found Recipe Cuisines")
         
-        
+ 
+@app.route('/post_search_title', methods=['POST'])
+def post_search_title():
+        recipes=mongo.db.recipes.find()
+        search = request.form.get('post_search_title')
+        post_search_title = mongo.db.recipes.find({"title": {"$regex":search}})
+        count = post_search_title.count()
+        return render_template("returned_food_title.html", recipes=recipes, count=count, post_search_title=post_search_title, title="Found Recipe Name")        
     
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'), port=int(os.environ.get('PORT'
