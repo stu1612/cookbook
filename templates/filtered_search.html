@@ -5,10 +5,12 @@
     <h1 class="display-4 pt-3 text-center">Found Recipe Collections</h1>
     <hr>
     <div class="row">
-        {% for recipe in post_search %}
+        {% for recipe in post_search_food_type %}
         <div class="col-sm-12 col-md-6 col-lg-4 mb-5">
             <div class="text-center mt-5">
-                {{recipe.tag_1}}{{recipe.tag_2}}{{recipe.tag_3}}
+                <span class="badge badge-pill badge-info">{{recipe.tag_1.capitalize()}}</span> | 
+                <span class="badge badge-pill badge-info">{{recipe.tag_2}}</span> | 
+                <span class="badge badge-pill badge-info">{{recipe.tag_3}}</span>
             </div>
             <a href="{{ url_for('the_recipe', recipe_id=recipe._id)}}">
                 <div class="card mt-1" id="card-display">

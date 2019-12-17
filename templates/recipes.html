@@ -7,7 +7,9 @@
         {% for recipe in recipes %}
         <div class="col-sm-12 col-md-6 col-lg-4 mb-5">
             <div class="text-center mt-5">
-                {{recipe.tag_1.capitalize()}} | {{recipe.tag_2}} | {{recipe.tag_3}}
+                <span class="badge badge-pill badge-info">{{recipe.tag_1.capitalize()}}</span> | 
+                <span class="badge badge-pill badge-info">{{recipe.tag_2}}</span> | 
+                <span class="badge badge-pill badge-info">{{recipe.tag_3}}</span>
             </div>
             <a href="{{ url_for('the_recipe', recipe_id=recipe._id)}}">
                 <div class="card mt-1" id="card-display">
