@@ -127,11 +127,11 @@ def delete_recipe(recipe_id):
 
 @app.route('/post_search', methods=['POST'])
 def post_search_food_type():
-    recipes=mongo.db.recipes.find()
-    search = request.form.get('post_search_food_type')
-    post_search_food_type = mongo.db.recipes.find({"tag_2": {"$regex":search}})
-    count = post_search_food_type.count()
-    return render_template("filtered_search.html", recipes=recipes, post_search_food_type=post_search_food_type, count=count, title="Filtered Search")    
+        recipes=mongo.db.recipes.find()
+        search = request.form.get('post_search_food_type')
+        post_search_food_type = mongo.db.recipes.find({"tag_2": {"$regex":search}})
+        count = post_search_food_type.count()
+        return render_template("filtered_search.html", recipes=recipes, post_search_food_type=post_search_food_type, count=count, title="Filtered Search")    
     
     
 if __name__ == '__main__':

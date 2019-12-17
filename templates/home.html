@@ -15,51 +15,26 @@
         </div>
         <div class="col-lg-7">
             <h3>Need some recipe inspiration ? </h3>
-            <!--<div class="input-group mb-3">-->
-            <!--    <form action="{{ url_for('post_search_food_type') }}" id="post_search_food_type" name="post_search_food_type" method="POST">-->
-            <!--        <select class="form-control" id="post_search_food_type" name="post_search_food_type">-->
-            <!--                        <option value="" selected disabled>Search for recipe food types here !</option>-->
-            <!--                        <option>Vegatables</option>-->
-            <!--                        <option>Fruits</option>-->
-            <!--                        <option>Grains</option>-->
-            <!--                        <option>Beans</option>-->
-            <!--                        <option>Meat</option>-->
-            <!--                        <option>Poultry</option>-->
-            <!--                        <option>Fish</option>-->
-            <!--                        <option>Seafood</option>-->
-            <!--                        <option>Dairy</option>-->
-            <!--                        <option>Other</option>-->
-            <!--                    </select>-->
-            <!--        <div class="input-group-append">-->
-            <!--            <button class="btn btn-outline-info" type="submit">Find</button>-->
-            <!--        </div>-->
-            <!--    </form>-->
-            <!--</div>-->
-            
-          
-                <form action="{{ url_for('post_search_food_type') }}" id="post_search_food_type" name="post_search_food_type" method="POST">
+            <form action="{{ url_for('post_search_food_type') }}" id="post_search_food_type" name="post_search_food_type" method="POST">
                 <div class="input-group">
-                    
                     <select class="form-control" id="post_search_food_type" name="post_search_food_type">
-                                                        <option value="" selected disabled>Search for recipe food types here !</option>
-                                                        <option>Vegatables</option>
-                                                        <option>Fruits</option>
-                                                        <option>Grains</option>
-                                                        <option>Beans</option>
-                                                        <option>Meat</option>
-                                                        <option>Poultry</option>
-                                                        <option>Fish</option>
-                                                        <option>Seafood</option>
-                                                        <option>Dairy</option>
-                                                        <option>Other</option>
-                                                    </select>
+                        <option value="" selected disabled>Search for recipe food types here !</option>
+                            <option>Vegatables</option>
+                            <option>Fruits</option>
+                            <option>Grains</option>
+                            <option>Beans</option>
+                            <option>Meat</option>
+                            <option>Poultry</option>
+                            <option>Fish</option>
+                            <option>Seafood</option>
+                            <option>Dairy</option>
+                            <option>Other</option>
+                    </select>
                     <div class="input-group-append">
                         <button class="btn btn-outline-info" type="submit">Find</button>
                     </div>
-                    
                 </div>
             </form>
-            
         </div>
     </div>
 </div>
@@ -75,48 +50,5 @@
     </div>
 </div>
 
-<!--<form action="{{ url_for('post_search_food_type') }}" method="POST">-->
-<!--    <input type="text" id="post_search_food_type" name="post_search_food_type" placeholder="Search">-->
-<!--    <button type="submit">Search</button>-->
-<!--</form>-->
-
-<!--<form action="{{ url_for('post_search_food_type') }}" id="post_search_food_type" name="post_search_food_type" method="POST">-->
-<!--    <select class="form-control" id="post_search_food_type" name="post_search_food_type">-->
-<!--                        <option value="" selected disabled>Search for recipe food types here !</option>-->
-<!--                        <option>Vegatables</option>-->
-<!--                        <option>Fruits</option>-->
-<!--                        <option>Grains</option>-->
-<!--                        <option>Beans</option>-->
-<!--                        <option>Meat</option>-->
-<!--                        <option>Poultry</option>-->
-<!--                        <option>Fish</option>-->
-<!--                        <option>Seafood</option>-->
-<!--                        <option>Dairy</option>-->
-<!--                        <option>Other</option>-->
-<!--                    </select>-->
-<!--        <button class="btn btn-outline-info" type="submit">Find</button>-->
-<!--</form>-->
-
-
-<div class="input-group mb-3">
-    <form action="{{ url_for('post_search_food_type') }}" id="post_search_food_type" name="post_search_food_type" method="POST">
-        <select class="form-control" id="post_search_food_type" name="post_search_food_type">
-                        <option value="" selected disabled>Search for recipe food types here !</option>
-                        <option>Vegatables</option>
-                        <option>Fruits</option>
-                        <option>Grains</option>
-                        <option>Beans</option>
-                        <option>Meat</option>
-                        <option>Poultry</option>
-                        <option>Fish</option>
-                        <option>Seafood</option>
-                        <option>Dairy</option>
-                        <option>Other</option>
-                    </select>
-        <div class="input-group-append">
-            <button class="btn btn-outline-info" type="submit">Find</button>
-        </div>
-    </form>
-</div>
 
 {% endblock content %}
