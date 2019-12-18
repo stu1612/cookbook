@@ -303,6 +303,9 @@ body {
     .card img {
         height: 260px;
     }
+    .input-group-text {
+        padding-top: 0;
+    }
 }
 
 @media only screen and (max-width: 576px) {
