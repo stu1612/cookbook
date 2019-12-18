@@ -126,7 +126,8 @@ def update_recipe(recipe_id):
 
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
-    mongo.db.recipes.remove()
+    recipes = mongo.db.recipes
+    recipes.remove({'_id': ObjectId(recipe_id)}) 
     flash('The recipe has been deleted', 'primary')
     return redirect(url_for('recipes'))
 

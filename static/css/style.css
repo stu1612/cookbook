@@ -38,9 +38,9 @@ body {
     text-decoration: none;
 }
 
-.fas {
-    color: white;
-}
+/*.fas {*/
+/*    color: white;*/
+/*}*/
 
 .footer {
     margin: 0!important;
@@ -192,6 +192,11 @@ body {
 .icons {
     background-color: rgba(255,255,255, 0.9);
     padding: 15px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content:center;
 }
 
 /*add_recipes.html*/

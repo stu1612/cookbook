@@ -2,7 +2,7 @@
 <div class="container mt-5 p-3 bg-white text-center">
     <div class="row align-items-center">
         <div class="col-lg-6">
-            <img src="https://images.unsplash.com/photo-1543261207-45df64507ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=966&q=80" class="img-responsive img-search" alt="image of a selection of red meat">
+            <img src="https://images.unsplash.com/photo-1543261207-45df64507ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=966&q=80" class="img-responsive img-search rounded" alt="image of a selection of red meat">
         </div>
         <div class="col-lg-6">
             <h3 class="font-weight-light">Looking for meat, vegetarian or dairy dishes ? Start HERE ! </h3>
@@ -70,7 +70,25 @@
             </form>
         </div>
         <div class="col-lg-6">
-            <img src="https://images.unsplash.com/photo-1464219222984-216ebffaaf85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" class="img-responsive img-search" alt="image of mexican food dish">
+            <img src="https://images.unsplash.com/photo-1464219222984-216ebffaaf85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" class="img-responsive img-search rounded" alt="image of mexican food dish">
+        </div>
+    </div>
+</div>
+<div class="container mt-5 p-3 bg-white text-center">
+    <div class="row align-items-center">
+        <div class="col-lg-6">
+            <img src="https://images.unsplash.com/photo-1516534775068-ba3e7458af70?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" class="img-responsive img-search rounded" alt="woman biting her pencil whilst looking at her computer">
+        </div>
+        <div class="col-lg-6">
+            <h3 class="font-weight-light">Liked a recipe but can't find it ? Start HERE ! </h3>
+            <div class="input-group mt-4 home-input">
+                <form action="{{ url_for('post_search_title') }}" id="post_search_title" name="post_search_title" method="POST">
+                    <input type="text" class="form-control" id="post_search_title" name="post_search_title">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="submit">Button</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>
