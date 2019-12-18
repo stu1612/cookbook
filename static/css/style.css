@@ -98,6 +98,9 @@ body {
 
 #recipe-card {
     height: 150px;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
 }
 
 .card-title {
@@ -123,7 +126,7 @@ body {
     transition: all 0.4s ease-in;
     max-width: 100%;
     /*width: 100%;*/
-    height: 30vh;
+    height: 250px;
 }
 
 .card:hover img {
@@ -296,6 +299,9 @@ body {
     }
     .form-control, .btn {
         font-size: 0.75rem;
+    }
+    .card img {
+        height: 260px;
     }
 }
 
