@@ -33,7 +33,10 @@
                             <option>Other</option>
                     </select>
                     <div class="input-group-append">
-                        <button class="btn btn-outline-info" type="submit">Find</button>
+                        <!--desktop btn version-->
+                        <button class="btn btn-outline-info d-none d-lg-block d-xl-block" type="submit">Find</button> 
+                        <!--mobile first btn version-->
+                        <button class="btn btn-info d-none d-block d-sm-block d-md-block d-lg-none" type="submit">Find</button>
                     </div>
                 </div>
             </form>
@@ -69,7 +72,10 @@
                             <option>Other</option>
                     </select>
                     <div class="input-group-append">
-                        <button class="btn btn-outline-info" type="submit">Find</button>
+                        <!--desktop btn version-->
+                        <button class="btn btn-outline-info d-none d-lg-block d-xl-block" type="submit">Find</button> 
+                        <!--mobile first btn version-->
+                        <button class="btn btn-info d-block d-sm-block d-md-block d-lg-none" type="submit">Find</button>
                     </div>
                 </div>
             </form>
@@ -80,7 +86,10 @@
     <div class="row align-items-center">
         <div class="col-lg-7">
             <h3>Feeling inspired ! Want to share ? </h3>
-            <a href="{{ url_for('add_recipe')}}" class="btn btn-outline-info mt-3">Create Recipe</a>
+            <!--desktop btn version-->
+            <a href="{{ url_for('add_recipe')}}" class="btn btn-outline-info mt-5 d-none d-lg-block d-xl-block">Create Recipe</a>
+            <!--mobile first btn version-->
+            <a href="{{ url_for('add_recipe')}}" class="btn btn-info mt-5 d-block d-sm-block d-md-block d-lg-none">Create Recipe</a>
         </div>
         <div class="col-lg-5">
             <img src="https://images.unsplash.com/photo-1482932973216-15c6808e8691?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1934&q=80" class="img-responsive img-homepg bottom" alt="person cooking at a food station">

@@ -5,8 +5,8 @@ body {
     font-family: 'Poppins', sans-serif;
     height: 100%;
     background-color: #f5f5f5;
-    overflow-x: hidden;
-    scroll-behavior: auto;
+    /*overflow-x: hidden;*/
+    /*scroll-behavior: auto;*/
 }
 
 .paginate {
@@ -240,9 +240,9 @@ body {
     .recipe-col {
         padding-bottom: 15px;
     }
-    li {
-        display: none;
-    }
+    /*li {*/
+    /*    display: none;*/
+    /*}*/
     .wrapper-inner {
         text-shadow: 1px 1px white;
     }
@@ -261,6 +261,26 @@ body {
         top: none;
         left: none;
         transform: translate(-0%, -0%);
+    }
+    .img-homepg {
+        /*width: 65%;*/
+        /*height: 300px;*/
+        width: 100%;
+        height: auto;
+    }
+    /*styling for img-homepg / top image*/
+    .top {
+        margin-bottom: 30px;
+    }
+     /*styling for img-homepg / bottom image*/
+    .bottom {
+        margin-top: 30px;
+    }
+    .p-5 {
+        padding: 20px!important;
+    }
+    .form-control, .btn {
+        font-size: 0.75rem;
     }
 }
 
@@ -292,23 +312,6 @@ body {
         font-size: 1.2rem;
         font-weight: 500;
         text-shadow: 2px 2px white;
-    }
-     .img-homepg {
-        width: 100%;
-    }
-    /*styling for img-homepg / top image*/
-    .top {
-        margin-bottom: 30px;
-    }
-     /*styling for img-homepg / bottom image*/
-    .bottom {
-        margin-top: 30px;
-    }
-    .p-5 {
-        padding: 20px!important;
-    }
-    .form-control, .btn {
-        font-size: 0.75rem;
     }
 }
 
