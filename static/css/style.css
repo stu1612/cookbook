@@ -342,7 +342,8 @@ body {
 
 @media only screen and (max-width: 375px) {
     .display-4 {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        text-align: center;
     }
     .card-img {
         height: 40vh;
@@ -357,5 +358,11 @@ body {
         font-size: 1.4rem;
         font-weight: 500;
         text-shadow: 2px 2px white;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .card-title {
+        font-size: 1.5rem;
     }
 }
