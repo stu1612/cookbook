@@ -8,11 +8,19 @@
     <form method="POST" action="{{ url_for('post_recipe') }}" class="needs-validation" novalidate>
         <div class="form-row">
             <div class="col-lg-12 mb-3 mt-3">
-                <label for="title">Title Description</label>
-                <!--<input type="text" class="form-control" id="title" name="title" aria-describedby="inputGroupPrepend" required pattern="[A-Za-z!?()&,. ]{5,50}">-->
+                <label for="title">Title description</label>
                 <textarea class="form-control" aria-label="With textarea" id="title" aria-describedby="inputGroupPrepend" required minlength="5" maxlength="50" name="title"></textarea>
                 <div class="invalid-feedback">
                     Input must be between 5 and 50 characters.
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-lg-12 mb-3 mt-3">
+                <label for="desc">What inspired this recipe ?</label>
+                <textarea class="form-control" aria-label="With textarea" id="desc" aria-describedby="inputGroupPrepend" required minlength="5" maxlength="125" name="desc"></textarea>
+                <div class="invalid-feedback">
+                    Input must be between 5 and 125 characters.
                 </div>
             </div>
         </div>
@@ -111,6 +119,7 @@
                 </div>
             </div>
         </div>
+        <!--INGREDIENTS-->
         <div class="form-row">
             <div class="col-lg-12 mb-3">
                 <label for="ing_1">Ingredient #1</label>
@@ -158,6 +167,52 @@
         </div>
         <div class="form-row">
             <div class="col-lg-12 mb-3">
+                <label for="ing_6">Ingredient #6</label>
+                <input type="text" class="form-control" id="ing_6" name="ing_6" aria-describedby="inputGroupPrepend" pattern="[A-Za-z0-9!?()&,. ]{5,50}">
+                <div class="invalid-feedback">
+                    This field is OPTIONAL- Input must be between 5 and 50 characters (some special characters are NOT valid).
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-lg-12 mb-3">
+                <label for="ing_7">Ingredient #7</label>
+                <input type="text" class="form-control" id="ing_7" name="ing_7" aria-describedby="inputGroupPrepend" pattern="[A-Za-z0-9!?()&,. ]{5,50}">
+                <div class="invalid-feedback">
+                    This field is OPTIONAL- Input must be between 5 and 50 characters (some special characters are NOT valid).
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-lg-12 mb-3">
+                <label for="ing_8">Ingredient #8</label>
+                <input type="text" class="form-control" id="ing_8" name="ing_8" aria-describedby="inputGroupPrepend" pattern="[A-Za-z0-9!?()&,. ]{5,50}">
+                <div class="invalid-feedback">
+                    This field is OPTIONAL- Input must be between 5 and 50 characters (some special characters are NOT valid).
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-lg-12 mb-3">
+                <label for="ing_9">Ingredient #9</label>
+                <input type="text" class="form-control" id="ing_9" name="ing_9" aria-describedby="inputGroupPrepend" pattern="[A-Za-z0-9!?()&,. ]{5,50}">
+                <div class="invalid-feedback">
+                    This field is OPTIONAL- Input must be between 5 and 50 characters (some special characters are NOT valid).
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-lg-12 mb-3">
+                <label for="ing_10">Ingredient #10</label>
+                <input type="text" class="form-control" id="ing_10" name="ing_10" aria-describedby="inputGroupPrepend" pattern="[A-Za-z0-9!?()&,. ]{5,50}">
+                <div class="invalid-feedback">
+                    This field is OPTIONAL- Input must be between 5 and 50 characters (some special characters are NOT valid).
+                </div>
+            </div>
+        </div>
+        <!--METHODS-->
+        <div class="form-row">
+            <div class="col-lg-12 mb-3">
                 <label for="method_1">Method #1</label>
                 <textarea class="form-control" id="method_1" name="method_1" aria-describedby="inputGroupPrepend" required minlength="5" maxlength="60"></textarea>
                 <div class="invalid-feedback">
@@ -196,6 +251,51 @@
             <div class="col-lg-12 mb-3">
                 <label for="method_5">Method #5</label>
                 <textarea class="form-control" id="method_5" name="method_5" aria-describedby="inputGroupPrepend" minlength="5" maxlength="60"></textarea>
+                <div class="invalid-feedback">
+                    Input must be between 5 and 60 characters.
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-lg-12 mb-3">
+                <label for="method_6">Method #6</label>
+                <textarea class="form-control" id="method_6" name="method_6" aria-describedby="inputGroupPrepend" minlength="5" maxlength="60"></textarea>
+                <div class="invalid-feedback">
+                    Input must be between 5 and 60 characters.
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-lg-12 mb-3">
+                <label for="method_7">Method #7</label>
+                <textarea class="form-control" id="method_7" name="method_7" aria-describedby="inputGroupPrepend" minlength="5" maxlength="60"></textarea>
+                <div class="invalid-feedback">
+                    Input must be between 5 and 60 characters.
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-lg-12 mb-3">
+                <label for="method_8">Method #8</label>
+                <textarea class="form-control" id="method_8" name="method_8" aria-describedby="inputGroupPrepend" minlength="5" maxlength="60"></textarea>
+                <div class="invalid-feedback">
+                    Input must be between 5 and 60 characters.
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-lg-12 mb-3">
+                <label for="method_9">Method #9</label>
+                <textarea class="form-control" id="method_9" name="method_9" aria-describedby="inputGroupPrepend" minlength="5" maxlength="60"></textarea>
+                <div class="invalid-feedback">
+                    Input must be between 5 and 60 characters.
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-lg-12 mb-3">
+                <label for="method_10">Method #10</label>
+                <textarea class="form-control" id="method_10" name="method_10" aria-describedby="inputGroupPrepend" minlength="5" maxlength="60"></textarea>
                 <div class="invalid-feedback">
                     Input must be between 5 and 60 characters.
                 </div>
