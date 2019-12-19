@@ -9,6 +9,10 @@ body {
     scroll-behavior: auto;
 }
 
+.navbar-dark .navbar-nav .active>.nav-link {
+    color: white;
+}
+
 .paginate {
     padding: 10px;
     margin: 2px;

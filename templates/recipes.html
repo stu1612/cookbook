@@ -5,7 +5,10 @@
     {% if count == 0 %}
     <div class="container text-center">
         <h5 class="text-center font-weight-light mt-5">No recipes have been created yet.</h5>
-        <a href="{{ url_for('add_recipe')}}" class="btn btn-outline-info">Create</a>
+        <!--desktop btn version-->
+        <a href="{{ url_for('add_recipe')}}" class="btn btn-outline-info mt-5 d-none d-lg-block d-xl-block btn-return-pg">Create</a>
+        <!--mobile first btn version-->
+        <a href="{{ url_for('add_recipe')}}" class="btn btn-info mt-5 d-block d-sm-block d-md-block d-lg-none">Create</a>
     </div>
     {% endif %}
     <hr>
