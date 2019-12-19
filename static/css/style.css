@@ -75,7 +75,7 @@ body {
 /*home.html*/
 
 #banner-container {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url("../img/banner_img3.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url("../img/banner_img.jpg");
     background-position: 10%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -315,7 +315,7 @@ body {
 
 @media only screen and (max-width: 576px) {
     #banner-container {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url("https://images.unsplash.com/photo-1527997921830-de1cf1f9b430?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2023&q=80");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url("../img/mobile_banner_img.jpg");
     }
     #banner-text {
         width: 90%;
