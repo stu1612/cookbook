@@ -17,7 +17,7 @@ body {
 .page-counter {
     display: flex;
     flex-direction: column;
-    align-items:center;
+    align-items: center;
 }
 
 .display-text {
@@ -51,6 +51,25 @@ body {
     margin: 0!important;
 }
 
+.cont-display-effect:hover img {
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+    border-color: black!important;
+}
+
+.img-display {
+    height: 300px;
+    display: block;
+    position: relative;
+    -webkit-transition: all 0.4s ease-in;
+    transition: all 0.4s ease-in;
+}
+
+.cont-display-effect:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 /*---------------------------*/
 
 /*home.html*/
@@ -73,25 +92,6 @@ body {
     color: white;
 }
 
-.cont-display-effect:hover img {
-    -webkit-transform: scale(1.05);
-    -ms-transform: scale(1.05);
-    transform: scale(1.05);
-    border-color: black!important;
-}
-
-.img-display {
-    height: 300px; 
-    display: block;
-    position: relative;
-    -webkit-transition: all 0.4s ease-in;
-    transition: all 0.4s ease-in;
-}
-
-.cont-display-effect:hover {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
 .home-input {
     width: 80%;
     margin: auto;
@@ -104,7 +104,7 @@ body {
 #recipe-card {
     height: 150px;
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     justify-content: space-between;
 }
 
@@ -165,13 +165,13 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: 	black;
+    color: black;
     font-weight: 800;
     text-shadow: 4px 4px white;
 }
 
- .wrapper-inner h2 {
-        font-weight: 200;
+.wrapper-inner h2 {
+    font-weight: 200;
 }
 
 .recipe-title {
@@ -191,24 +191,22 @@ body {
 }
 
 .wrapper-img {
-   height: 400px;
+    height: 400px;
 }
 
 .icons {
-    background-color: rgba(255,255,255, 0.9);
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 15px;
 }
 
 .btn-container {
     display: flex;
-    justify-content:center;
+    justify-content: center;
 }
 
 /*add_recipes.html*/
 
 /*search.html*/
-
-
 
 /*MEDIA QUERIES*/
 
@@ -296,14 +294,15 @@ body {
     .top {
         margin-bottom: 30px;
     }
-     /*styling for img-homepg / bottom image*/
+    /*styling for img-homepg / bottom image*/
     .bottom {
         margin-top: 30px;
     }
     .p-5 {
         padding: 20px!important;
     }
-    .form-control, .btn {
+    .form-control,
+    .btn {
         font-size: 0.75rem;
     }
     .card img {

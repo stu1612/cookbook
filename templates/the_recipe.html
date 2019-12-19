@@ -1,5 +1,5 @@
+<!--html page showing object_id for user selected recipe card-->
 {% extends "base.html" %} {% block content %} {% for recipe in recipes %}
-
 <div class="wrapper pb-5">
     {% if recipe.image %}
     <img src="{{recipe.image}}" class="img-responsive" alt="displayed url image from user"> {% else %}
@@ -60,7 +60,7 @@
     </div>
 </div>
 <div class="container text-center btn-container mt-5 mb-5">
-    <!--desktop btn version--> 
+    <!--desktop btn version-->
     <a href="{{ url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn btn-outline-success mr-2 d-none d-lg-block d-xl-block">EDIT</a>
     <!--mobile first btn version-->
     <a href="{{ url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn btn-success mr-2 d-block d-sm-block d-md-block d-lg-none">EDIT</a>
