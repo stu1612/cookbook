@@ -38,9 +38,14 @@ body {
     text-decoration: none;
 }
 
-/*.fas {*/
-/*    color: white;*/
-/*}*/
+.fa-chevron-down {
+    color: white;
+}
+
+.btn-return-pg {
+    width: 50%;
+    margin: auto;
+}
 
 .footer {
     margin: 0!important;
@@ -68,14 +73,14 @@ body {
     color: white;
 }
 
-.cont-homepg:hover img {
+.cont-display-effect:hover img {
     -webkit-transform: scale(1.05);
     -ms-transform: scale(1.05);
     transform: scale(1.05);
     border-color: black!important;
 }
 
-.img-homepg {
+.img-display {
     height: 300px; 
     display: block;
     position: relative;
@@ -83,7 +88,7 @@ body {
     transition: all 0.4s ease-in;
 }
 
-.cont-homepg:hover {
+.cont-display-effect:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -203,9 +208,7 @@ body {
 
 /*search.html*/
 
-.img-search {
-    height: 250px;
-}
+
 
 /*MEDIA QUERIES*/
 
@@ -242,6 +245,9 @@ body {
     .home-input {
         width: 100%;
     }
+    .img-display {
+        height: 250px;
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -263,9 +269,6 @@ body {
     .recipe-col {
         padding-bottom: 15px;
     }
-    /*li {*/
-    /*    display: none;*/
-    /*}*/
     .wrapper-inner {
         text-shadow: 1px 1px white;
     }
@@ -285,9 +288,7 @@ body {
         left: none;
         transform: translate(-0%, -0%);
     }
-    .img-homepg {
-        /*width: 65%;*/
-        /*height: 300px;*/
+    .img-display {
         width: 100%;
         height: auto;
     }

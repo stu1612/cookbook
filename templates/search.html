@@ -1,8 +1,12 @@
 {% extends "base.html" %} {% block content %}
-<div class="container mt-5 p-3 bg-white text-center">
+<div class="container mt-5">
+    <h1 class="display-4 pt-3 text-center">Search Recipes</h1>
+    <hr>
+</div>
+<div class="container mt-5 p-3 bg-white text-center cont-display-effect">
     <div class="row align-items-center">
         <div class="col-lg-6">
-            <img src="https://images.unsplash.com/photo-1543261207-45df64507ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=966&q=80" class="img-responsive img-search rounded" alt="image of a selection of red meat">
+            <img src="https://images.unsplash.com/photo-1543261207-45df64507ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=966&q=80" class="img-responsive rounded img-display top" alt="image of a selection of red meat">
         </div>
         <div class="col-lg-6">
             <h3 class="font-weight-light">Looking for meat, vegetarian or dairy dishes ? Start HERE ! </h3>
@@ -22,18 +26,21 @@
                             <option>Other</option>
                     </select>
                     <div class="input-group-append">
-                        <button class="btn btn-outline-info" type="submit">Find</button>
+                        <!--desktop btn version-->
+                        <button class="btn btn-outline-info d-none d-lg-block d-xl-block" type="submit">Find</button>
+                        <!--mobile first btn version-->
+                        <button class="btn btn-info d-none d-block d-sm-block d-md-block d-lg-none" type="submit">Find</button>
                     </div>
                 </div>
             </form>
         </div>
     </div>
 </div>
-<div class="container mt-5 p-3 bg-white text-center">
+<div class="container mt-5 p-3 bg-white text-center cont-display-effect">
     <div class="row align-items-center">
         <div class="col-lg-6">
             <h3 class="font-weight-light">Fancy something Mexican, Turkish or Lebanese ? Start HERE ! </h3>
-                <form action="{{ url_for('post_search_food_cuisine') }}" id="post_search_food_cuisine" name="post_search_food_cuisine" method="POST">
+            <form action="{{ url_for('post_search_food_cuisine') }}" id="post_search_food_cuisine" name="post_search_food_cuisine" method="POST">
                 <div class="input-group mt-4 home-input">
                     <select class="form-control" id="post_search_food_cuisine" name="post_search_food_cuisine">
                         <option value="" selected disabled>Search for recipe food cuisines here !</option>
@@ -64,42 +71,38 @@
                             <option>Other</option>
                     </select>
                     <div class="input-group-append">
-                        <button class="btn btn-outline-info" type="submit">Find</button>
+                        <!--desktop btn version-->
+                        <button class="btn btn-outline-info d-none d-lg-block d-xl-block" type="submit">Find</button>
+                        <!--mobile first btn version-->
+                        <button class="btn btn-info d-none d-block d-sm-block d-md-block d-lg-none" type="submit">Find</button>
                     </div>
                 </div>
             </form>
         </div>
         <div class="col-lg-6">
-            <img src="https://images.unsplash.com/photo-1464219222984-216ebffaaf85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" class="img-responsive img-search rounded" alt="image of mexican food dish">
+            <img src="https://images.unsplash.com/photo-1464219222984-216ebffaaf85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" class="img-responsive rounded img-display bottom" alt="image of mexican food dish">
         </div>
     </div>
 </div>
-<div class="container mt-5 p-3 bg-white text-center">
+<div class="container mt-5 p-3 bg-white text-center cont-display-effect">
     <div class="row align-items-center">
         <div class="col-lg-6">
-            <img src="https://images.unsplash.com/photo-1516534775068-ba3e7458af70?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" class="img-responsive img-search rounded" alt="woman biting her pencil whilst looking at her computer">
+            <img src="https://images.unsplash.com/photo-1516534775068-ba3e7458af70?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" class="img-responsive rounded img-display top" alt="woman biting her pencil whilst looking at her computer">
         </div>
         <div class="col-lg-6">
             <h3 class="font-weight-light">Liked a recipe but can't find it ? Start HERE ! </h3>
-            <div class="input-group mt-4 home-input">
-                <form action="{{ url_for('post_search_title') }}" id="post_search_title" name="post_search_title" method="POST">
-                    <input type="text" class="form-control" id="post_search_title" name="post_search_title">
+            <form action="{{ url_for('post_search_title') }}" id="post_search_title" name="post_search_title" method="POST">
+                <div class="input-group mt-4 input-home">
+                    <input type="text" class="form-control" id="post_search_title" name="post_search_title" placeholder="Search for food recipe title here !">
                     <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="submit">Button</button>
+                        <!--desktop btn version-->
+                        <button class="btn btn-outline-info d-none d-lg-block d-xl-block" type="submit">Find</button>
+                        <!--mobile first btn version-->
+                        <button class="btn btn-info d-none d-block d-sm-block d-md-block d-lg-none" type="submit">Find</button>
                     </div>
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
-    </div>
-</div>
-<div class="container mt-5">
-    <div class="input-group mb-3">
-        <form action="{{ url_for('post_search_title') }}" id="post_search_title" name="post_search_title" method="POST">
-            <input type="text" class="form-control" id="post_search_title" name="post_search_title">
-            <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="submit">Button</button>
-            </div>
-        </form>
     </div>
 </div>
 

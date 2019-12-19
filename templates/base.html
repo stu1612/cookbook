@@ -24,17 +24,18 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+                <!--<li class="nav-item active">-->
+                <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('home')}}">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('recipes')}}">Recipes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('add_recipe')}}">Create Recipe</a>
+                    <a class="nav-link" href="{{ url_for('search')}}">Search Recipe</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('search')}}">Search Recipe</a>
+                    <a class="nav-link" href="{{ url_for('add_recipe')}}">Create Recipe</a>
                 </li>
             </ul>
         </div>
