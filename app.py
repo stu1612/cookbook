@@ -24,10 +24,10 @@ def home():
 def search():
     return render_template('search.html', title='Search Recipes')    
 
-
+# displays created recipes on paginated pages
 @app.route('/recipes')
 def recipes():
-     # Pagination function
+    # Pagination function
     page_limit = 6
     current_page = int(request.args.get('current_page', 1))
     total = mongo.db.recipes.count()
@@ -39,6 +39,8 @@ def recipes():
                            recipes=recipes, count=count,pages=pages,current_page=current_page,
                            title='Recipes')
 
+
+# CRUD functionality - create, edit and delete recipes
 
 @app.route('/add_recipe')
 def add_recipe():
@@ -74,11 +76,9 @@ def post_recipe():
     flash('Great - your recipe has been added to our collection !',
           'success')
     return redirect(url_for('recipes'))
-# return render_template('add_recipe.html', title='Create Recipe')
 
 
 # the_recipe route is the route to see the selected card recipe in a full html page including all contents
-
 @app.route('/the_recipe/<recipe_id>')
 def the_recipe(recipe_id):
     the_recipe = mongo.db.recipes.find({'_id': ObjectId(recipe_id)})
@@ -87,7 +87,6 @@ def the_recipe(recipe_id):
 
 
 # update_recipe route is the route to see the returned selected recipe_id to edit contents
-
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
     the_recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
@@ -132,31 +131,52 @@ def delete_recipe(recipe_id):
     return redirect(url_for('recipes'))
 
 
+# search routes for recipes type, cuisine and title
+
 @app.route('/post_search_type', methods=['POST'])
 def post_search_food_type():
+        # Pagination function
+        page_limit = 6
+        current_page = int(request.args.get('current_page', 1))
+        total = mongo.db.recipes.count()
+        pages = range(1, int(math.ceil(total / page_limit)) + 1)
+        # route function
         recipes=mongo.db.recipes.find()
         search = request.form.get('post_search_food_type')
         post_search_food_type = mongo.db.recipes.find({"tag_2": {"$regex":search}})
         count = post_search_food_type.count()
-        return render_template("returned_food_type.html", recipes=recipes, post_search_food_type=post_search_food_type, count=count, title="Found Recipe Types")    
+        return render_template("returned_food_type.html", current_page=current_page, pages=pages, recipes=recipes, post_search_food_type=post_search_food_type, count=count, title="Found Recipe Types")    
         
     
 @app.route('/post_search_cuisine', methods=['POST'])
 def post_search_food_cuisine():
+        # Pagination function
+        page_limit = 6
+        current_page = int(request.args.get('current_page', 1))
+        total = mongo.db.recipes.count()
+        pages = range(1, int(math.ceil(total / page_limit)) + 1)
+        # route function
         recipes=mongo.db.recipes.find()
         search = request.form.get('post_search_food_cuisine')
         post_search_food_cuisine = mongo.db.recipes.find({"tag_3": {"$regex":search}})
         count = post_search_food_cuisine.count()
-        return render_template("returned_food_cuisine.html", recipes=recipes, post_search_food_cuisine=post_search_food_cuisine, count=count, title="Found Recipe Cuisines")
+        return render_template("returned_food_cuisine.html", current_page=current_page, pages=pages, recipes=recipes, post_search_food_cuisine=post_search_food_cuisine, count=count, title="Found Recipe Cuisines")
         
  
 @app.route('/post_search_title', methods=['POST'])
 def post_search_title():
+        # Pagination function
+        page_limit = 6
+        current_page = int(request.args.get('current_page', 1))
+        total = mongo.db.recipes.count()
+        pages = range(1, int(math.ceil(total / page_limit)) + 1)
+        # route function
         recipes=mongo.db.recipes.find()
         search = request.form.get('post_search_title')
         post_search_title = mongo.db.recipes.find({"title": {"$regex":search}})
         count = post_search_title.count()
-        return render_template("returned_food_title.html", recipes=recipes, count=count, post_search_title=post_search_title, title="Found Recipe Name")        
+        return render_template("returned_food_title.html", current_page=current_page, pages=pages, recipes=recipes, count=count, post_search_title=post_search_title, title="Found Recipe Name")        
+ 
     
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'), port=int(os.environ.get('PORT'
