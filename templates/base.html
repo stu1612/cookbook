@@ -78,7 +78,9 @@
         
         
         function inputChange(e) {
-            console.log(document.getElementById("test").value);
+            let text = document.getElementById("test").value
+            document.getElementById("test").value = text.toLowerCase();
+            console.log(text);
         }
         
         
