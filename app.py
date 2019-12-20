@@ -183,6 +183,7 @@ def post_search_food_type():
         )
 
 
+
 @app.route('/post_search_cuisine', methods=['POST'])
 def post_search_food_cuisine():
     page_limit = 6
