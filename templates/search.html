@@ -94,7 +94,7 @@
             <h3 class="font-weight-light">Liked a recipe but can't find it ? Start HERE ! </h3>
             <form action="{{ url_for('post_search_title') }}" id="post_search_title" name="post_search_title" method="POST">
                 <div class="input-group mt-4 input-home">
-                    <input type="text" class="form-control" id="post_search_title" name="post_search_title" placeholder="Search for food recipe title here !">
+                    <input type="text" class="form-control" id="test" name="post_search_title" onChange="inputChange(event)" onKeyUp="inputChange(event)" placeholder="Search for food recipe title here !">
                     <div class="input-group-append">
                         <!--desktop btn version-->
                         <button class="btn btn-outline-info d-none d-lg-block d-xl-block" type="submit">Find</button>
