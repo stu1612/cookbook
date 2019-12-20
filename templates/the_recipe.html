@@ -5,7 +5,7 @@
     <!--<img src="{{recipe.image}}" class="img-responsive" alt="displayed url image from user"> {% else %}-->
     <!--<img src="{{ url_for('static', filename='img/cookbook2_img.jpg') }}" class="img-responsive" alt="image of a cook book"> {% endif %}-->
     {% if recipe.image %}
-    <img src="{{recipe.image}}" class="img-responsive" alt="displayed url image from user">
+    <img src="{{recipe.image}}" class="img-responsive" id="imageId" alt="displayed url image from user">
     {% else %}
     <img src="{{ url_for('static', filename='img/cookbook2_img.jpg') }}" class="img-responsive" alt="image of a cook book">
     {% endif %}
