@@ -9,10 +9,6 @@ body {
     scroll-behavior: auto;
 }
 
-.navbar-dark .navbar-nav .active>.nav-link {
-    color: white;
-}
-
 .paginate {
     padding: 10px;
     margin: 2px;
@@ -208,6 +204,11 @@ body {
     justify-content: center;
 }
 
+.the-recipe-img {
+    width: 100%;
+    height: auto;
+}
+
 /*add_recipes.html*/
 
 /*search.html*/
@@ -315,6 +316,13 @@ body {
     .input-group-text {
         padding-top: 0;
     }
+    .method-spacing {
+        margin-top: 50px;
+    }
+    .wrapper img {
+        width: 100%;
+        height: auto;
+    }
 }
 
 @media only screen and (max-width: 576px) {
@@ -335,9 +343,6 @@ body {
     .card-img {
         height: 42vh;
     }
-    .wrapper img {
-        height: 40vh;
-    }
     .wrapper-inner {
         padding: 15px;
     }
@@ -345,6 +350,9 @@ body {
         font-size: 1.2rem;
         font-weight: 500;
         text-shadow: 2px 2px white;
+    }
+    .method-title-sizing {
+        font-size: 2rem;
     }
 }
 
@@ -356,9 +364,6 @@ body {
     }
     .card-img {
         height: 40vh;
-    }
-    .wrapper img {
-        height: 55vh;
     }
     .wrapper-inner {
         padding: 20px;
