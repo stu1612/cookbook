@@ -22,9 +22,7 @@
             </div>
             <a href="{{ url_for('the_recipe', recipe_id=recipe._id)}}">
                 <div class="card mt-1" id="card-display">
-                    {% if recipe.image %}
-                    <img src="{{recipe.image}}" class="img-responsive card-img" alt="displayed url image from user"> {% else %}
-                    <img src="https://images.unsplash.com/photo-1542010589005-d1eacc3918f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1969&q=80" class="img-responsive card-img" alt="image of a cook book"> {% endif %}
+                    <img src="{{recipe.image}}" onerror="this.onerror=null;this.src='{{ url_for('static', filename='img/cookbook3_img.jpg') }}';" class="img-responsive card-img" alt="displayed url image from user">
                     <div class="card-body" id="recipe-card">
                         <h5 class="card-title mt-4">{{ recipe.title.capitalize() }}</h5>
                     </div>
@@ -32,17 +30,6 @@
             </a>
         </div>
         {% endfor %}
-    </div>
-</div>
-<div class="container pt-5 page-counter">
-    <div class="row">
-        <ul class="pagination">
-            {% for page_number in pages %} {% if page_number == current_page %}
-            <li class="active"><a class="btn btn-outline-info paginate">{{ page_number }}</a></li>
-            {% else %}
-            <li class="waves-effect"><a href="{{ url_for('recipes', current_page=page_number) }}" class="btn btn-outline-info paginate">{{ page_number }}</a></li>
-            {% endif %} {% endfor %}
-        </ul>
     </div>
 </div>
 {% endblock content %}

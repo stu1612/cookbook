@@ -1,14 +1,7 @@
 <!--html page showing object_id for user selected recipe card-->
 {% extends "base.html" %} {% block content %} {% for recipe in recipes %}
 <div class="wrapper pb-5">
-    <!--{% if recipe.image %}-->
-    <!--<img src="{{recipe.image}}" class="img-responsive" alt="displayed url image from user"> {% else %}-->
-    <!--<img src="{{ url_for('static', filename='img/cookbook2_img.jpg') }}" class="img-responsive" alt="image of a cook book"> {% endif %}-->
-    <!--{% if recipe.image %}-->
-    <img src="{{recipe.image}}" onerror="this.onerror=null;this.src='{{ url_for('static', filename='img/cookbook2_img.jpg') }}';" class="img-responsive" alt="displayed url image from user">
-    <!--{% else %}-->
-    <!--<img src="{{ url_for('static', filename='img/cookbook2_img.jpg') }}" class="img-responsive" alt="image of a cook book">-->
-    <!--{% endif %}-->
+    <img src="{{recipe.image}}" onerror="this.onerror=null;this.src='{{ url_for('static', filename='img/cookbook3_img.jpg') }}';" class="img-responsive" alt="displayed url image from user">
     <div class="wrapper-inner d-none d-lg-block d-xl-block">
         <h2 class="display-3">{{ recipe.title.capitalize() }}</h2>
     </div>
@@ -22,10 +15,10 @@
             <div class="col-lg-6 second-wrapper-inner">
                 <div class="container icons text-center">
                     <h2 class="display-3 mb-5 d-block d-sm-block d-md-block d-lg-none method-title-sizing">{{ recipe.title.capitalize() }}</h2>
-                        <p class="lead">{{recipe.desc.capitalize()}}</p>
-                            <a href="#" class="badge badge-info mt-3">{{recipe.tag_1}}</a>
-                            <a href="#" class="badge badge-info mt-3">{{recipe.tag_2}}</a>
-                            <a href="#" class="badge badge-info mt-3">{{recipe.tag_3}}</a>
+                    <p class="lead">{{recipe.desc.capitalize()}}</p>
+                    <span class="badge badge-info mt-3">{{recipe.tag_1}}</span>
+                    <span class="badge badge-info mt-3">{{recipe.tag_2}}</span>
+                    <span class="badge badge-info mt-3">{{recipe.tag_3}}</span>
                     <div class="container text-center mt-3">
                         <div class="row justify-content-center pt-2">
                             <div class="col-4">
@@ -61,7 +54,7 @@
             <p class="lead mt-3 recipe-text">{{recipe.ing_8.capitalize()}}</p>
             <p class="lead mt-3 recipe-text">{{recipe.ing_9.capitalize()}}</p>
             <p class="lead mt-3 recipe-text">{{recipe.ing_10.capitalize()}}</p>
-            
+
         </div>
         <div class="col-sm-12 col-lg-6">
             <h4 class="method-spacing">Method</h4>
