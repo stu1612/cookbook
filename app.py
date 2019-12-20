@@ -2,7 +2,7 @@ import os
 import math
 from flask import Flask, render_template, url_for, request, flash, \
     redirect
-from flask_pymongo import PyMongo, pymongo
+from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from flask_paginate import Pagination
 
