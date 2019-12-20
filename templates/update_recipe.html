@@ -7,7 +7,7 @@
         <div class="form-row">
             <div class="col-lg-12 mb-3 mt-3">
                 <label for="title">Title Description</label>
-                <textarea class="form-control" aria-label="With textarea" id="title" name="title" aria-describedby="inputGroupPrepend" required minlength="5" maxlength="50">{{ recipe.title }}</textarea>
+                <textarea class="form-control" aria-label="With textarea" id="lower" name="title" id="lower" onChange="inputChange(event)" onKeyUp="inputChange(event)" aria-describedby="inputGroupPrepend" required minlength="5" maxlength="50">{{ recipe.title }}</textarea>
                 <div class="invalid-feedback">
                     Input must be between 5 and 50 characters.
                 </div>
