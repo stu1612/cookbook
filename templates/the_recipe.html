@@ -4,6 +4,11 @@
     {% if recipe.image %}
     <img src="{{recipe.image}}" class="img-responsive" alt="displayed url image from user"> {% else %}
     <img src="{{ url_for('static', filename='img/cookbook2_img.jpg') }}" class="img-responsive" alt="image of a cook book"> {% endif %}
+    {% if image != recipe.image%}
+    <h5>no image</h5>
+    {% else %}
+    <h5>image</h5>
+    {% endif %}
     <div class="wrapper-inner d-none d-lg-block d-xl-block">
         <h2 class="display-3">{{ recipe.title.capitalize() }}</h2>
     </div>
@@ -17,7 +22,7 @@
             <div class="col-lg-6 second-wrapper-inner">
                 <div class="container icons text-center">
                     <h2 class="display-3 mb-5 d-block d-sm-block d-md-block d-lg-none method-title-sizing">{{ recipe.title.capitalize() }}</h2>
-                        <p class="lead">{{recipe.desc}}</p>
+                        <p class="lead">{{recipe.desc.capitalize()}}</p>
                             <a href="#" class="badge badge-info mt-3">{{recipe.tag_1}}</a>
                             <a href="#" class="badge badge-info mt-3">{{recipe.tag_2}}</a>
                             <a href="#" class="badge badge-info mt-3">{{recipe.tag_3}}</a>
