@@ -160,13 +160,8 @@ def delete_recipe(recipe_id):
     return redirect(url_for('recipes'))
 
 
-# search routes for recipes type, cuisine and title
 @app.route('/post_search_type', methods=['POST'])
 def post_search_food_type():
-    page_limit = 6
-    current_page = int(request.args.get('current_page', 1))
-    total = mongo.db.recipes.count()
-    pages = range(1, int(math.ceil(total / page_limit)) + 1)
     recipes = mongo.db.recipes.find()
     search = request.form.get('post_search_food_type')
     post_search_food_type = \
@@ -174,8 +169,6 @@ def post_search_food_type():
     count = post_search_food_type.count()
     return render_template(
         'returned_food_type.html',
-        current_page=current_page,
-        pages=pages,
         recipes=recipes,
         post_search_food_type=post_search_food_type,
         count=count,
@@ -183,13 +176,8 @@ def post_search_food_type():
         )
 
 
-
 @app.route('/post_search_cuisine', methods=['POST'])
 def post_search_food_cuisine():
-    page_limit = 6
-    current_page = int(request.args.get('current_page', 1))
-    total = mongo.db.recipes.count()
-    pages = range(1, int(math.ceil(total / page_limit)) + 1)
     recipes = mongo.db.recipes.find()
     search = request.form.get('post_search_food_cuisine')
     post_search_food_cuisine = \
@@ -197,8 +185,6 @@ def post_search_food_cuisine():
     count = post_search_food_cuisine.count()
     return render_template(
         'returned_food_cuisine.html',
-        current_page=current_page,
-        pages=pages,
         recipes=recipes,
         post_search_food_cuisine=post_search_food_cuisine,
         count=count,
@@ -208,10 +194,6 @@ def post_search_food_cuisine():
 
 @app.route('/post_search_title', methods=['POST'])
 def post_search_title():
-    page_limit = 6
-    current_page = int(request.args.get('current_page', 1))
-    total = mongo.db.recipes.count()
-    pages = range(1, int(math.ceil(total / page_limit)) + 1)
     recipes = mongo.db.recipes.find()
     search = request.form.get('post_search_title')
     post_search_title = \
@@ -219,8 +201,6 @@ def post_search_title():
     count = post_search_title.count()
     return render_template(
         'returned_food_title.html',
-        current_page=current_page,
-        pages=pages,
         recipes=recipes,
         count=count,
         post_search_title=post_search_title,
