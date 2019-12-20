@@ -22,12 +22,11 @@
             </div>
             <a href="{{ url_for('the_recipe', recipe_id=recipe._id)}}">
                 <div class="card mt-1" id="card-display">
-                    {% if recipe.image %}
-                    <img src="{{recipe.image}}" class="img-responsive card-img" id="image-load" alt="displayed url image from user">
-                    <p id="load-response"></p>
-                    {% else %}
-                    <img src="{{ url_for('static', filename='img/cookbook2_img.jpg') }}" class="img-responsive card-img" alt="image of a cook book">
-                    {% endif %}
+                    <!--{% if recipe.image %}-->
+                    <img src="{{recipe.image}}" onerror="this.onerror=null;this.src='{{ url_for('static', filename='img/cookbook2_img.jpg') }}';" class="img-responsive card-img" id="image-load" alt="displayed url image from user">
+                    <!--{% else %}-->
+                    <!--<img src="{{ url_for('static', filename='img/cookbook2_img.jpg') }}" class="img-responsive card-img" alt="image of a cook book">-->
+                    <!--{% endif %}-->
                     <div class="card-body" id="recipe-card">
                         <h5 class="card-title font-weight-light mt-4" id="title">{{ recipe.title.capitalize() }}</h5>
                         <button class="btn btn-info d-block d-sm-block d-md-block d-lg-block d-xl-none">See Recipe</button>
