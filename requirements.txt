@@ -3,7 +3,7 @@ awscli==1.16.286
 botocore==1.13.22
 Click==7.0
 colorama==0.4.1
-Django==2.0.2
+Django==2.0.12
 dnspython==1.16.0
 docutils==0.15.2
 Flask==1.1.1
