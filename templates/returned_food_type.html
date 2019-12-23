@@ -22,7 +22,7 @@
             </div>
             <a href="{{ url_for('the_recipe', recipe_id=recipe._id)}}">
                 <div class="card mt-1" id="card-display">
-                    <img src="{{recipe.image}}" onerror="this.onerror=null;this.src='{{ url_for('static', filename='img/cookbook3_img.jpg') }}';" class="img-responsive card-img" alt="displayed url image from user"> 
+                    <img src="{{recipe.image}}" onerror="this.onerror=null;this.src='{{ url_for('static', filename='img/cookbook3_img.jpg') }}';" class="img-responsive card-img rounded" alt="displayed url image from user"> 
                     <div class="card-body" id="recipe-card">
                         <h5 class="card-title mt-4">{{ recipe.title.capitalize() }}</h5>
                     </div>

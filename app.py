@@ -30,7 +30,7 @@ def search():
 @app.route('/recipes')
 def recipes():
 
-    # Pagination function
+    # Pagination function - sourced from code institute slack community member dano 5342 - sourced information in readme
 
     page_limit = 6
     current_page = int(request.args.get('current_page', 1))

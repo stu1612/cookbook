@@ -10,7 +10,7 @@
             <img src="static/img/butchers_choice.jpg" class="img-responsive rounded img-display top" alt="image of a selection of red meat">
         </div>
         <div class="col-lg-6">
-            <h3 class="font-weight-light">Looking for meat, vegetarian or dairy dishes ? Start HERE ! </h3>
+            <h3>Looking for meat, vegetarian or dairy dishes ? Start HERE ! </h3>
             <form action="{{ url_for('post_search_food_type') }}" id="post_search_food_type" name="post_search_food_type" method="POST">
                 <div class="input-group mt-4 home-input">
                     <select class="form-control" id="post_search_food_type" name="post_search_food_type">
@@ -40,7 +40,7 @@
 <div class="container mt-5 p-3 bg-white text-center cont-display-effect">
     <div class="row align-items-center">
         <div class="col-lg-6">
-            <h3 class="font-weight-light">Fancy something Mexican, Turkish or Lebanese ? Start HERE ! </h3>
+            <h3>Fancy something Mexican, Turkish or Lebanese ? Start HERE ! </h3>
             <form action="{{ url_for('post_search_food_cuisine') }}" id="post_search_food_cuisine" name="post_search_food_cuisine" method="POST">
                 <div class="input-group mt-4 home-input">
                     <select class="form-control" id="post_search_food_cuisine" name="post_search_food_cuisine">
@@ -91,10 +91,10 @@
             <img src="static/img/woman_biting_pencil.jpg" class="img-responsive rounded img-display top" alt="woman biting her pencil whilst looking at her computer">
         </div>
         <div class="col-lg-6">
-            <h3 class="font-weight-light">Liked a recipe but can't find it ? Start HERE ! </h3>
+            <h3>Liked a recipe but can't find it ? Start HERE ! </h3>
             <form action="{{ url_for('post_search_title') }}" id="post_search_title" name="post_search_title" method="POST">
                 <div class="input-group mt-4 input-home">
-                    <input type="text" class="form-control" id="lower" onChange="inputChange(event)" onKeyUp="inputChange(event)" name="post_search_title" placeholder="Search for food recipe title here !">
+                    <input type="text" class="form-control" id="lower" onChange="inputChange(event)" onKeyUp="inputChange(event)" name="post_search_title" placeholder="Enter your search description name here !">
                     <div class="input-group-append">
                         <!--desktop btn version-->
                         <button class="btn btn-outline-info d-none d-lg-block d-xl-block" type="submit">Find</button>

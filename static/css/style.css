@@ -70,6 +70,10 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.navbar-dark .navbar-nav .nav-link {
+    padding-right: 20px;
+}
+
 /*---------------------------*/
 
 /*home.html*/
@@ -251,6 +255,10 @@ body {
     .img-display {
         height: 250px;
     }
+    .card-title {
+        font-size: 1.5rem;
+    }
+    
 }
 
 @media only screen and (max-width: 768px) {
@@ -323,6 +331,14 @@ body {
         width: 100%;
         height: auto;
     }
+    .img-center {
+        width: 100%;
+        height: auto;
+    }
+    .card-title {
+        font-size: 1.6rem;
+        text-align: center;
+    }
 }
 
 @media only screen and (max-width: 576px) {
@@ -333,7 +349,7 @@ body {
         width: 90%;
     }
     .display-4 {
-        font-size: 3rem;
+        font-size: 1.8rem;
         padding: 0 20px;
     }
     .lead {

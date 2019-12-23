@@ -83,6 +83,9 @@
             </div>
         </div>
     </div>
+    <div class="container mt-5 text-center">
+        <img src="https://images.unsplash.com/photo-1513135065346-a098a63a71ee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80" class="img-responsive rounded img-center">
+    </div>
     <div class="container mt-5 p-5 bg-white text-center cont-display-effect">
         <div class="row align-items-center">
             <div class="col-lg-7">
@@ -90,7 +93,11 @@
                 <!--desktop btn version-->
                 <a href="{{ url_for('add_recipe')}}" class="btn btn-outline-info mt-5 d-none d-lg-block d-xl-block">Create Recipe</a>
                 <!--mobile first btn version-->
-                <a href="{{ url_for('add_recipe')}}" class="btn btn-info mt-5 d-block d-sm-block d-md-block d-lg-none">Create Recipe</a>
+                <a href="{{ url_for('add_recipe')}}" class="btn btn-info mt-3 d-block d-sm-block d-md-block d-lg-none">Create Recipe</a>
+                 <!--desktop btn version-->
+                <a href="{{ url_for('recipes')}}" class="btn btn-outline-info mt-3 d-none d-lg-block d-xl-block">See Recipes</a>
+                <!--mobile first btn version-->
+                <a href="{{ url_for('recipes')}}" class="btn btn-info mt-3 d-block d-sm-block d-md-block d-lg-none">See Recipes</a>
             </div>
             <div class="col-lg-5">
                 <img src="static/img/man_preparing_food.jpg" class="img-responsive rounded img-display bottom" alt="person cooking at a food station">
@@ -98,13 +105,7 @@
         </div>
     </div>
 </div>
-<!--<div class="container">-->
-<!--    <img src="https://images.unsplash.com/pho" id="test-image">-->
-<!--    <p id="img-response"></p>-->
-<!--</div>-->
 
-<div class="container">
-    <img src="https://images.unsplash.com/pho" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1571942389648-078c07e6a28f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80';">
-</div>
+
 
 {% endblock content %}
