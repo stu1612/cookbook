@@ -258,6 +258,9 @@ body {
     .card-title {
         font-size: 1.5rem;
     }
+    .desc-text {
+        font-size: 1rem;
+    }
     
 }
 
@@ -336,8 +339,11 @@ body {
         height: auto;
     }
     .card-title {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         text-align: center;
+    }
+    .desc-text {
+        font-size: 1.3rem;
     }
 }
 
